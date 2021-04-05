@@ -1,233 +1,374 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- リセットCSSファイル -->
-	<link rel="stylesheet" href="css/normalize.css" type="text/css">
-	<!-- CSSファイル -->
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<!-- ファビコン -->
-	<link rel="icon" href="./img/favicon.png" type="image/png">
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-	<title>Document</title>
-</head>
-<body>
-	<header class="header">
-	<div class="inner">
-		<h1 class="header__logo">
-			<a href="#"><img src="./img/logo.png" alt="ロゴ"></a>
-		</h1>
-		
-		<nav class="header__nav">
-			<ul class="menu">
-				<li class="menu__list-"><a href="#news">NEWS</a></li>
-				<li class="menu__list"><a href="#about">ABOUT</a></li>
-				<li class="menu__list"><a href="#events">EVENTS</a></li>
-				<li class="menu__list"><a href="#gallery">GALLERY</a></li>
-				<li class="menu__list"><a href="#access">ACCESS</a></li>
-				<li class="menu__list"><a href="#contact">CONTACT</a></li>
-			</ul>
-		</nav>
-	</div><!--.inner-->
-	</header>
-	
-	
-	<main class="main">
-	<div class="mv">
-		<div class="mv__item">
-			<h2 class="mv__item-title">タイトル</h2>
-			<p class="mv__item-desc">
-				テキストが入りますテキストが入ります<br>
-				テキストが入りますテキストが入ります<br>
-				テキストが入りますテキストが入ります<br>
-				テキストが入りますテキストが入ります
-			</p>
-    	</div><!--.mv__item-->
-	</div><!--.mv-->
-		
-		
-	<section class="news" id="news">
-	<div class="inner">
-		<h3 class="news__title ttl">NEWS</h3>
-		
-		<div class="news__wrap">
-		  <div class="news__item">
-			<div class="news__item-date">20XX.01.01</div>
-			<div class="news__item-text">テキストが入りますテキストが入ります</div>
-		  </div><!--.news__item-->
-			
-		  <div class="news__item">
-			<div class="news__item-date">20XX.01.01</div>
-			<div class="news__item-text">テキストが入りますテキストが入ります</div>
-		  </div><!--.news__item-->
-			
-		  <div class="news__item">
-			<div class="news__item-date">20XX.01.01</div>
-			<div class="news__item-text">テキストが入りますテキストが入ります</div>
-		  </div><!--.news__item-->
-		</div><!--.news_wrap-->
-	</div><!--.inner-->
-	</section><!--.news-->
-		
-		
-	<section class="about" id="about">
-	<div class="inner">
-		<h3 class="about__title ttl">ABOUT</h3>
-		
-		<div class="about__wrap">
-			<div class="about__item">
-				<div class="about__item-texts">
-					<div class="about__item-texts-title">タイトル</div>
-				  	<p class="about__item-texts-desc">テキストが入りますテキストが入りますテキストが入りますテキストが入ります<br>
-				  	テキストが入りますテキストが入りますテキストが入りますテキストが入ります</p>
-				</div><!--.about__item-texts-->
-				<div class="about__item-img">
-					<img src="./img/about_img01.png" alt="紹介画像">
-				</div><!--.about__item-img-->
-			</div><!--.about__item-->
-			
-			<div class="about__item">
-				<div class="about__item-texts">
-					<div class="about__item-texts-title">タイトル</div>
-				  	<p class="about__item-texts-desc">テキストが入りますテキストが入りますテキストが入りますテキストが入ります<br>
-				  	テキストが入りますテキストが入りますテキストが入りますテキストが入ります</p>
-				</div><!--.about__item-texts-->
-				<div class="about__item-img">
-					<img src="./img/about_img02.png" alt="紹介画像">
-				</div><!--.about__item-img-->
-			</div><!--.about__item-->
-		</div><!--.	about_wrap-->
-	</div><!--.inner-->
-	</section><!--.about-->
-		
-		
-	<section class="events" id="events">
-	<div class="inner">
-		<h3 class="events__title ttl">EVENTS</h3>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- リセットCSSファイル -->
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
+    <!--Googleフォント-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap"
+      rel="stylesheet"
+    />
+    <!-- slick -->
+    <link rel="stylesheet" href="css/slick-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/slick.min.css" type="text/css" />
+    <!-- lightbox -->
+    <link rel="stylesheet" href="css/lightbox.min.css" type="text/css" />
+    <!-- CSSファイル -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <!-- ファビコン -->
+    <link rel="icon" href="./img/favicon.png" type="image/png" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="loading">
+      <!-- <img src="./img/loading.gif" alt="" /> -->
+    </div>
 
-		<div class="events__wrap">
-			<div class="events__item">
-				<div class="events__item-img">
-					<img src="./img/interview_img01.png" alt="紹介画像">
-				</div><!--.events__item-img-->
-				<div class="events__item-texts">
-				  <div class="events__item-texts-title">ダミー記事</div>
-				  <p class="events__item-texts-desc">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</p>
-				</div><!--.events__item-texts-->
-			</div><!--.events__item-->
-			
-			<div class="events__item">
-				<div class="events__item-img">
-					<img src="./img/interview_img02.png" alt="紹介画像">
-				</div><!--.events__item-img-->
-				<div class="events__item-texts">
-				  <div class="events__item-texts-title">ダミー記事</div>
-				  <p class="events__item-texts-desc">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</p>
-				</div><!--.events__item-texts-->
-			</div><!--.events__item-->
-			
-			<div class="events__item">
-				<div class="events__item-img">
-					<img src="./img/interview_img03.png" alt="紹介画像">
-				</div><!--.events__item-img-->
-				<div class="events__item-texts">
-				  <div class="events__item-texts-title">ダミー記事</div>
-				  <p class="events__item-texts-desc">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</p>
-				</div><!--.events__item-texts-->
-			</div><!--.events__item-->
-		</div><!--.events_wrap-->
-	</div><!--.inner-->
-	</section><!--.events-->
-		
-		
-	<section class="gallery" id="gallery">
-	<div class="inner">
-		<h3 class="gallery__title ttl">GALLERY</h3>
+    <header class="header">
+      <div class="inner">
+        <h1 class="header__logo">
+          <a href="#"><img src="./img/logo.png" alt="ロゴ" /></a>
+        </h1>
 
-		<div class="gallery__wrap">
-			<div class="gallery__item">
-			  <img src="./img/gallery_img01.png" alt="">
-			</div>
-			<div class="gallery__item">
-			  <img src="./img/gallery_img02.png" alt="">
-			</div>
-			<div class="gallery__item">
-			  <img src="./img/gallery_img03.png" alt="">
-			</div>
-			<div class="gallery__item">
-			  <img src="./img/gallery_img04.png" alt="">
-			</div>
-			<div class="gallery__item">
-			  <img src="./img/gallery_img05.png" alt="">
-			</div>
-			<div class="gallery__item">
-			  <img src="./img/gallery_img06.png" alt="">
-			</div>
-			<div class="gallery__item">
-			  <img src="./img/gallery_img07.png" alt="">
-			</div>
-			<div class="gallery__item">
-			  <img src="./img/gallery_img08.png" alt="">
-			</div>
-			<div class="gallery__item">
-			  <img src="./img/gallery_img09.png" alt="">
-			</div>
-			<div class="gallery__item">
-			  <img src="./img/gallery_img10.png" alt="">
-			</div>
-		</div><!--.gallery_wrap-->
-		
-	  	<div class="gallery__btn more">
-        	<a href="#">もっと見る</a>
-      	</div>
-	</div><!--.inner-->
-	</section><!--.gallery-->
-		
-		
-	<section class="access" id="access">
-	<div class="inner">
-		<h3 class="access__title ttl">ACCESS</h3>
-		
-		<div class="access__wrap">
-			<div class="access__item-table">
-				<p>営業日時表</p>
-			</div><!--.access__item-table-->
-			<div class="access__item-map">
-				<p>地図</p>
-			</div><!--.access__item-map-->
-		</div><!--access_wrap-->
-	</div><!--.inner-->
-	</section><!--.access-->
+        <nav class="header__nav">
+          <ul class="menu">
+            <li class="menu__list"><a href="#news">NEWS</a></li>
+            <li class="menu__list"><a href="#about">ABOUT</a></li>
+            <li class="menu__list"><a href="#events">EVENTS</a></li>
+            <li class="menu__list"><a href="#gallery">GALLERY</a></li>
+            <li class="menu__list"><a href="#access">ACCESS</a></li>
+            <li class="menu__list"><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="header__nav-sp">
+          <div class="header__nav-sp-line"></div>
+        </div>
+      </div>
+      <!--.inner-->
+    </header>
 
-	<section class="cantact" id="contact">
-		<h3 class="contact__title ttl">CONTACT</h3>
-		
-		<div class="contact__wrap">
-			<p>入力フォーム</p>
-		</div>
-	</section><!--.contact-->
-	</main>
-	
-	
-	<footer class="footer">
-	<div class="inner">
-		<nav class="footer__nav">
-			<ul class="menu">
-				<li class="menu__list-"><a href="#">利用規約</a></li>
-				<li class="menu__list"><a href="#">プライバシーポリシー</a></li>
-			</ul>
-		</nav>
-		
-		<div class="footer__cr"><small>Copyright &copy; 2021 ダミーテキスト All Rights Reserved.</small></div>
-	</div><!--.inner-->
-	</footer>
-	
-	
-	<!-- JQuery --> 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<!-- JSファイル --> 
-	<script src="js/script.js" type="text/javascript"></script>
-</body>
+    <main class="main">
+      <div class="mv">
+        <div class="mv__item inner">
+          <h2 class="mv__item-title">タイトル</h2>
+          <p class="mv__item-desc">
+            テキストが入りますテキストが入ります<br />
+            テキストが入りますテキストが入ります<br />
+            テキストが入りますテキストが入ります<br />
+            テキストが入りますテキストが入ります
+          </p>
+        </div>
+        <!--.mv__item-->
+      </div>
+      <!--.mv-->
+
+      <section class="news" id="news">
+        <div class="inner">
+          <h3 class="news__title ttl">NEWS</h3>
+
+          <div class="news__wrap">
+            <div class="news__item">
+              <div class="news__item-date">20XX.01.01</div>
+              <div class="news__item-text">
+                テキストが入りますテキストが入ります
+              </div>
+            </div>
+            <!--.news__item-->
+
+            <div class="news__item">
+              <div class="news__item-date">20XX.01.01</div>
+              <div class="news__item-text">
+                テキストが入りますテキストが入ります
+              </div>
+            </div>
+            <!--.news__item-->
+
+            <div class="news__item">
+              <div class="news__item-date">20XX.01.01</div>
+              <div class="news__item-text">
+                テキストが入りますテキストが入ります
+              </div>
+            </div>
+            <!--.news__item-->
+          </div>
+          <!--.news_wrap-->
+        </div>
+        <!--.inner-->
+      </section>
+      <!--.news-->
+
+      <section class="about" id="about">
+        <div class="inner">
+          <h3 class="about__title ttl">ABOUT</h3>
+
+          <div class="about__wrap">
+            <div class="about__item">
+              <div class="about__item-img">
+                <img src="./img/about_img01.png" alt="紹介画像" />
+              </div>
+              <!--.about__item-img-->
+              <div class="about__item-texts">
+                <div class="about__item-texts-title">タイトル</div>
+                <p class="about__item-texts-desc">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入ります<br />
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </p>
+              </div>
+              <!--.about__item-texts-->
+            </div>
+            <!--.about__item-->
+
+            <div class="about__item">
+              <div class="about__item-img">
+                <img src="./img/about_img02.png" alt="紹介画像" />
+              </div>
+              <!--.about__item-img-->
+              <div class="about__item-texts">
+                <div class="about__item-texts-title">タイトル</div>
+                <p class="about__item-texts-desc">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入ります<br />
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </p>
+              </div>
+              <!--.about__item-texts-->
+            </div>
+            <!--.about__item-->
+          </div>
+          <!--.	about_wrap-->
+        </div>
+        <!--.inner-->
+      </section>
+      <!--.about-->
+
+      <section class="events" id="events">
+        <div class="inner">
+          <h3 class="events__title ttl">EVENTS</h3>
+
+          <div class="events__wrap slider">
+            <div class="events__item">
+              <div class="events__item-img">
+                <img src="./img/interview_img01.png" alt="紹介画像" />
+              </div>
+              <!--.events__item-img-->
+              <div class="events__item-texts">
+                <div class="events__item-texts-title">ダミー記事01</div>
+                <p class="events__item-texts-desc">
+                  この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                </p>
+              </div>
+              <!--.events__item-texts-->
+            </div>
+            <!--.events__item-->
+
+            <div class="events__item">
+              <div class="events__item-img">
+                <img src="./img/interview_img02.png" alt="紹介画像" />
+              </div>
+              <!--.events__item-img-->
+              <div class="events__item-texts">
+                <div class="events__item-texts-title">ダミー記事02</div>
+                <p class="events__item-texts-desc">
+                  この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                </p>
+              </div>
+              <!--.events__item-texts-->
+            </div>
+            <!--.events__item-->
+
+            <div class="events__item">
+              <div class="events__item-img">
+                <img src="./img/interview_img03.png" alt="紹介画像" />
+              </div>
+              <!--.events__item-img-->
+              <div class="events__item-texts">
+                <div class="events__item-texts-title">ダミー記事03</div>
+                <p class="events__item-texts-desc">
+                  この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                </p>
+              </div>
+              <!--.events__item-texts-->
+            </div>
+            <!--.events__item-->
+
+            <div class="events__item">
+              <div class="events__item-img">
+                <img src="./img/interview_img02.png" alt="紹介画像" />
+              </div>
+              <!--.events__item-img-->
+              <div class="events__item-texts">
+                <div class="events__item-texts-title">ダミー記事04</div>
+                <p class="events__item-texts-desc">
+                  この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                </p>
+              </div>
+              <!--.events__item-texts-->
+            </div>
+            <!--.events__item-->
+
+            <div class="events__item">
+              <div class="events__item-img">
+                <img src="./img/interview_img01.png" alt="紹介画像" />
+              </div>
+              <!--.events__item-img-->
+              <div class="events__item-texts">
+                <div class="events__item-texts-title">ダミー記事05</div>
+                <p class="events__item-texts-desc">
+                  この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                </p>
+              </div>
+              <!--.events__item-texts-->
+            </div>
+            <!--.events__item-->
+          </div>
+          <!--.events_wrap-->
+        </div>
+        <!--.inner-->
+      </section>
+      <!--.events-->
+
+      <section class="gallery" id="gallery">
+        <div class="inner">
+          <h3 class="gallery__title ttl">GALLERY</h3>
+          <div class="gallery__wrap">
+            <div class="gallery__item">
+              <a href="./img/gallery_img01.png" data-lightbox="group"
+                ><img src="./img/gallery_img01.png" alt=""
+              /></a>
+            </div>
+            <div class="gallery__item">
+              <a href="./img/gallery_img02.png" data-lightbox="group"
+                ><img src="./img/gallery_img02.png" alt=""
+              /></a>
+            </div>
+            <div class="gallery__item">
+              <a href="./img/gallery_img03.png" data-lightbox="group"
+                ><img src="./img/gallery_img03.png" alt=""
+              /></a>
+            </div>
+            <div class="gallery__item">
+              <a href="./img/gallery_img04.png" data-lightbox="group"
+                ><img src="./img/gallery_img04.png" alt=""
+              /></a>
+            </div>
+            <div class="gallery__item">
+              <a href="./img/gallery_img05.png" data-lightbox="group"
+                ><img src="./img/gallery_img05.png" alt=""
+              /></a>
+            </div>
+            <div class="gallery__item">
+              <a href="./img/gallery_img06.png" data-lightbox="group"
+                ><img src="./img/gallery_img06.png" alt=""
+              /></a>
+            </div>
+            <div class="gallery__item">
+              <a href="./img/gallery_img07.png" data-lightbox="group"
+                ><img src="./img/gallery_img07.png" alt=""
+              /></a>
+            </div>
+            <div class="gallery__item">
+              <a href="./img/gallery_img08.png" data-lightbox="group"
+                ><img src="./img/gallery_img08.png" alt=""
+              /></a>
+            </div>
+            <div class="gallery__item">
+              <a href="./img/gallery_img09.png" data-lightbox="group"
+                ><img src="./img/gallery_img09.png" alt=""
+              /></a>
+            </div>
+          </div>
+          <!--.gallery_wrap-->
+
+          <!--	 <div class="gallery__btn more">
+        	<button>もっと見る</button>
+      	</div>-->
+        </div>
+        <!--.inner-->
+      </section>
+      <!--.gallery-->
+
+      <section class="contact" id="contact">
+        <div class="inner">
+          <h3 class="contact__title ttl">CONTACT</h3>
+          <div class="contact__wrap">
+            <form
+              action="#contact"
+              method="GET"
+              id="form"
+              onsubmit="doSomething();return false;"
+            >
+              <div class="contact__item">
+                <label for="name"
+                  >お名前<span class="required">必須</span></label
+                >
+                <input type="text" id="name" name="name" />
+              </div>
+              <div class="contact__item">
+                <label for="email"
+                  >メールアドレス<span class="required">必須</span></label
+                >
+                <input type="text" id="email" name="email" />
+              </div>
+              <div class="contact__item">
+                <label for="message"
+                  >メッセージ<span class="required">必須</span></label
+                >
+                <textarea id="message" name="message"></textarea>
+              </div>
+              <input type="submit" class="submit" value="送信" />
+            </form>
+          </div>
+          <!--.contact__wrap-->
+        </div>
+        <!--.inner-->
+      </section>
+      <!--.contact-->
+    </main>
+
+    <footer class="footer">
+      <div class="inner">
+        <nav class="footer__nav">
+          <ul class="menu">
+            <li class="menu__list"><a href="#">利用規約</a></li>
+            <li class="menu__list"><a href="#">プライバシーポリシー</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__cr">
+          <small
+            >Copyright &copy; 2021 ダミーテキスト All Rights Reserved.</small
+          >
+        </div>
+      </div>
+      <!--.inner-->
+    </footer>
+    <div id="pagetop">
+      <a href="#"><i class="fas fa-chevron-up"></i></a>
+    </div>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- slick -->
+    <script src="js/slick.min.js" type="text/javascript"></script>
+    <!-- lightbox -->
+    <script src="js/lightbox.min.js" type="text/javascript"></script>
+    <!-- scrollreveal -->
+    <script src="js/scrollreveal.min.js" type="text/javascript"></script>
+    <!-- validate -->
+    <script src="js/validate.min.js" type="text/javascript"></script>
+    <!-- snowfall-->
+    <script src="js/snowfall.min.js" type="text/javascript"></script>
+    <!-- JSファイル -->
+    <script src="js/script.js" type="text/javascript"></script>
+  </body>
 </html>
