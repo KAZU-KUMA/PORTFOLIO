@@ -21,7 +21,7 @@ pass: kuma1234
 
 ## その他制作物
 
-### HTML/CSS  
+### CODING(HTML/CSS/JS)  
 １．[CafeShopSite](http://153.126.204.74/sample/lesson1/index.html)  
 ２．[CandyShopSite](http://153.126.204.74/sample/lesson2/index.html)  
 ３．[CorporateSite](http://153.126.204.74/sample/lesson3/index.html)  
