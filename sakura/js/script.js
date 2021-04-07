@@ -2,32 +2,32 @@
 'use strict';
 
 /*ページ上部スクロール*/
-$(function(){
+jQuery(function(){
     // ボタン表示/非表示
-    $(window).scroll(function(){
-        if ($(this).scrollTop() > 300) {
-            $('#pagetop').fadeIn();
+    jQuery(window).scroll(function(){
+        if (jQuery(this).scrollTop() > 300) {
+            jQuery('#pagetop').fadeIn();
         } else {
-            $('#pagetop').fadeOut();
+            jQuery('#pagetop').fadeOut();
         }
     });
     // スクロール設定
-    $('#pagetop').click(function(){
-        $('html, body').animate(
+    jQuery('#pagetop').click(function(){
+        jQuery('html, body').animate(
             {scrollTop:0}, 1000);
         return false;
     });
 });
 
 /*ページ内スクロール*/
-$(function () {
-  $('a[href^="#"]').click(function(){
+jQuery(function () {
+  jQuery('a[href^="#"]').click(function(){
 	//リンク先の位置取得、設定
-    var href = $(this).attr("href");
-    var target = $(href == "#" || href == "" ? 'html' : href);
+    var href = jQuery(this).attr("href");
+    var target = jQuery(href == "#" || href == "" ? 'html' : href);
     var position = target.offset().top;
 	// スクロール設定
-    $("html, body").animate({
+    jQuery("html, body").animate({
       scrollTop: position
     }, 1000, "swing");
     return false;
@@ -35,20 +35,20 @@ $(function () {
 });
 
 /*ハンバーガーメニュー*/
-$(function(){
+jQuery(function(){
 	// ボタン切り替え
-	$(".header__nav-sp").click(function(){
-		$("html").toggleClass('open');
+	jQuery(".header__nav-sp").click(function(){
+		jQuery("html").toggleClass('open');
 	});
 	// メニュークリックで非表示
-	$('a[href^="#"]').click(function(){
-		$("html").removeClass('open'); 
+	jQuery('a[href^="#"]').click(function(){
+		jQuery("html").removeClass('open'); 
 	});
 });
 
 /*slick(スライド)*/
-$(function() {
-    $('.slider').slick({
+jQuery(function() {
+    jQuery('.slider').slick({
 	arrows: false, 
 	autoplay: true,
 	autoplaySpeed: 3000,
@@ -66,16 +66,8 @@ $(function() {
     });
 });
 
-/*lightbox2(モーダルウィンドウ)*/ 
-$(function () {
-    lightbox.option({
-      'resizeDuration': 200,
-      'wrapAround': true
-    })
-});
-
 /*ScrollReveal(フェードインアニメーション)*/ 
-$(function(){
+jQuery(function(){
     ScrollReveal().reveal(".gallery__item", {
         duration: 1500,
         origin: 'bottom',
@@ -87,18 +79,17 @@ $(function(){
 
 /*validate(入力フォーム)*/
 // カスタムルール設定
-$(function() {
-    $.validator.addMethod("space",
+jQuery(function() {
+    jQuery.validator.addMethod("space",
     function(value, element) {
       return this.optional(element) || value.trim().length > 0;
     },
     "必須入力です。"
-);
-
-    $("#form").validate({
+    );
+    jQuery("#form").validate({
         //ルール設定
         rules: {
-            name: {
+            username: {
                 required: true,
                 space: true,
                 maxlength: 20
@@ -109,14 +100,14 @@ $(function() {
                 email: true
             },
             message: {
-				required: true,
+                required: true,
                 space: true,
-				maxlength: 100
+                maxlength: 100
             },
         },
         //エラーメッセージ設定
         messages: {
-            name: {
+            username: {
                 required: "お名前を入力してください。",
                 maxlength: "お名前は20文字以内で入力してください。"
             },
@@ -125,35 +116,18 @@ $(function() {
                 email: "正しいメールアドレスを入力してください。"
             },
             message: {
-				required: "メッセージを入力してください。",
+                required: "メッセージを入力してください。",
                 maxlength: "100文字以内で入力してください。"
             },
         },
         //エラーメッセージ表示位置
         errorPlacement: function(error, element) {
-			error.insertAfter(element);
+            error.insertAfter(element);
         }
     });
 });
 
-/*snowfall(雪または花びら)*/ 
-$(function(){
-    $(document).snowfall({
-        flakeCount : 100,
-        flakeColor : '#FFF',
-        flakeIndex : 500,
-        minSize : 30,
-        maxSize : 50,
-        minSpeed : 2,
-        maxSpeed : 5,
-        round : true,
-        shadow : false,
-        image : './img/sakura.png'
-    });
-});
-
 /*ローディング*/
-$(window).on('load', function(){
-	$('#loading').delay(100).fadeOut(500);	
-	$('.snowfall-flakes').delay(100).fadeOut(500);	
+jQuery(window).on('load', function(){
+	jQuery('#loading').delay(0).fadeOut(500);	
 });

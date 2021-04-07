@@ -1,4 +1,11 @@
 @charset "UTF-8";
+/*
+Theme Name: SAKURA
+Theme URL: https://kuma-portfolio.com/
+Author: KAZUKI KUMAKURA
+Description:　オリジナルテーマ(2021.4.5)
+Version: 1.0
+*/
 /* CSS Document */
 /*カラー*/
 /* 背景色*/
@@ -13,19 +20,18 @@ html,
 body {
   color: #444;
   box-sizing: border-box;
-  font-family: "Kiwi Maru", "Lato", "Noto Sans JP", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: "Kiwi Maru", "Lato", "Noto Sans JP", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   width: 100%;
   overflow-x: hidden;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
-header,
 main {
-  flex: 1;
+  min-height: calc(100vh - 280px);
+  padding-bottom: 80px;
 }
 
 a {
@@ -41,7 +47,12 @@ li {
 }
 
 .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 @media screen and (min-width: 1025px) {
@@ -66,6 +77,12 @@ li {
   }
 }
 
+.center {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
 /*******************************
     HEADER
 *******************************/
@@ -75,11 +92,9 @@ li {
 }
 
 .header .inner {
-  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   height: 80px;
-  padding: 0 1rem;
 }
 
 .header .menu {
@@ -111,18 +126,17 @@ li {
   color: #ee6e9f;
 }
 
-.header__logo {
-  width: 180px;
+.header__logo a {
+  font-size: 32px;
+  color: #ee6e9f;
+  letter-spacing: 0.2em;
+  line-height: 1;
 }
 
 @media screen and (min-width: 1025px) {
-  .header__logo {
-    width: 250px;
+  .header__logo a {
+    font-size: 48px;
   }
-}
-
-.header__logo img {
-  width: 100%;
 }
 
 .header__nav-sp {
@@ -193,18 +207,14 @@ li {
 .mv {
   width: 100%;
   height: calc(100vh - 80px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 80%, #c1ff95), url(../img/mv.png);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 80%, #c1ff95), url(./img/mv.png);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 .mv .inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 0px;
+  padding-top: 100px;
 }
 
 @media screen and (min-width: 1025px) {
@@ -249,11 +259,7 @@ li {
 }
 
 .news .inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 25px 0 0;
+  padding-top: 25px;
 }
 
 .news .inner:after {
@@ -318,11 +324,7 @@ li {
 }
 
 .about .inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 25px 0 0;
+  padding-top: 25px;
 }
 
 .about .inner:after {
@@ -360,15 +362,21 @@ li {
   width: 100%;
 }
 
-@media screen and (min-width: 1025px) {
-  .about__item-img {
-    width: 60%;
-  }
-}
-
 .about__item-img img {
   width: 100%;
   border-radius: 50%;
+}
+
+@media screen and (min-width: 600px) {
+  .about__item-img img {
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .about__item-img img {
+    width: 600px;
+  }
 }
 
 .about__item-texts {
@@ -411,11 +419,7 @@ li {
 }
 
 .events .inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 25px 10px 0px;
+  padding-top: 25px;
 }
 
 .events .inner:after {
@@ -498,16 +502,8 @@ li {
 }
 
 .gallery .inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 25px 10px;
-}
-
-.gallery .is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  height: 0;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .gallery__wrap {
@@ -550,12 +546,9 @@ li {
 }
 
 .contact .inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  padding: 25px 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 @media screen and (min-width: 1025px) {
@@ -605,6 +598,10 @@ li {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+}
+
+.contact__wrap-result {
+  padding: 50px 0;
 }
 
 .required {
@@ -659,13 +656,12 @@ button:hover {
 .footer {
   width: 100%;
   background: #fdd8d8;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .footer .inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 80px;
 }
 
@@ -682,10 +678,16 @@ button:hover {
 
 .footer .menu__list a {
   color: #444;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   line-height: 1;
   margin: 20px;
+}
+
+@media screen and (min-width: 1025px) {
+  .footer .menu__list a {
+    font-size: 16px;
+  }
 }
 
 .footer .menu__list a:hover {
@@ -736,7 +738,7 @@ button:hover {
 #loading {
   width: 100vw;
   height: 100vh;
-  background: #fdd8d8;
+  background: #fff;
   position: fixed;
   top: 0;
   left: 0;
@@ -744,8 +746,8 @@ button:hover {
 }
 
 #loading img {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   top: 50%;
   left: 50%;

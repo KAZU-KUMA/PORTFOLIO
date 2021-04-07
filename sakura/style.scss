@@ -1,3 +1,11 @@
+@charset "UTF-8";
+/*
+Theme Name: SAKURA
+Theme URL: https://kuma-portfolio.com/
+Author: KAZUKI KUMAKURA
+Description:　オリジナルテーマ(2021.4.5)
+Version: 1.0
+*/
 /* CSS Document */
 @charset "UTF-8";
 
@@ -40,16 +48,14 @@ body {
     "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
     "MS PGothic", sans-serif;
   width: 100%;
-  //   height: 100%;
   overflow-x: hidden;
 }
 body {
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
-header,
 main {
-  flex: 1;
+  min-height: calc(100vh - 280px);
+  padding-bottom: 80px;
 }
 a {
   text-decoration: none;
@@ -62,7 +68,13 @@ li {
   margin: 0;
 }
 .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
+
+  padding: 0 1rem;
   @include mq("pc") {
     max-width: 1280px;
   }
@@ -79,6 +91,11 @@ li {
     font-size: 30px;
   }
 }
+.center {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
 /*******************************
     HEADER
 *******************************/
@@ -86,11 +103,9 @@ li {
   width: 100%;
   background: $red;
   .inner {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     height: 80px;
-    padding: 0 1rem;
   }
   .menu {
     position: absolute;
@@ -122,12 +137,14 @@ li {
   }
 }
 .header__logo {
-  width: 180px;
-  @include mq("pc") {
-    width: 250px;
-  }
-  img {
-    width: 100%;
+  a {
+    font-size: 32px;
+    color: $accent;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    @include mq("pc") {
+      font-size: 48px;
+    }
   }
 }
 .header__nav-sp {
@@ -196,17 +213,12 @@ li {
       rgba(255, 255, 255, 0.3) 80%,
       rgba(193, 255, 149, 1)
     ),
-    url(../img/mv.png);
-  //   background-image: url(../img/mv.png);
+    url(./img/mv.png);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 0px;
+    padding-top: 100px;
     @include mq("pc") {
       display: block;
     }
@@ -241,11 +253,7 @@ li {
 .news {
   background: $green;
   .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 25px 0 0;
+    padding-top: 25px;
     &:after {
       border-top: 10px solid transparent;
       border-left: 50vw solid transparent;
@@ -295,11 +303,7 @@ li {
 .about {
   background: $red;
   .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 25px 0 0;
+    padding-top: 25px;
     &:after {
       border-top: 10px solid transparent;
       border-left: 50vw solid transparent;
@@ -328,12 +332,15 @@ li {
   }
   &-img {
     width: 100%;
-    @include mq("pc") {
-      width: 60%;
-    }
     img {
       width: 100%;
       border-radius: 50%;
+      @include mq("tab") {
+        width: 350px;
+      }
+      @include mq("pc") {
+        width: 600px;
+      }
     }
   }
   &-texts {
@@ -367,11 +374,7 @@ li {
 .events {
   background: $yellow;
   .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 25px 10px 0px;
+    padding-top: 25px;
     &:after {
       border-top: 10px solid transparent;
       border-left: 50vw solid transparent;
@@ -433,15 +436,8 @@ li {
 .gallery {
   background: $blue;
   .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 25px 10px;
-  }
-  .is-hidden {
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 }
 .gallery__wrap {
@@ -475,12 +471,9 @@ li {
 .contact {
   background: linear-gradient($blue, $red);
   .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding: 25px 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     @include mq("pc") {
       text-align: left;
     }
@@ -518,6 +511,9 @@ li {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+}
+.contact__wrap-result {
+  padding: 50px 0;
 }
 .required {
   font-size: 12px;
@@ -560,11 +556,10 @@ button {
 .footer {
   width: 100%;
   background: $red;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 80px;
     @include mq("pc") {
       flex-direction: row;
@@ -576,10 +571,13 @@ button {
     &__list {
       a {
         color: $black;
-        font-size: 16px;
+        font-size: 14px;
         letter-spacing: 0.2em;
         line-height: 1;
         margin: 20px;
+        @include mq("pc") {
+          font-size: 16px;
+        }
         &:hover {
           color: $accent;
         }
@@ -627,14 +625,14 @@ button {
 #loading {
   width: 100vw;
   height: 100vh;
-  background: $primary;
+  background: $white;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 300;
   img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     position: absolute;
     top: 50%;
     left: 50%;
