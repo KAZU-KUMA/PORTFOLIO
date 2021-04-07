@@ -19,6 +19,23 @@ pass: kuma1234
 - ツール・・・GitHub(バージョン管理)、 WordPress(CMS)
 - OS・・・Windows
 
-## 制作者
+## その他制作物
 
-熊倉 一樹
+### HTML/CSS  
+１．[CafeShopSite](http://153.126.204.74/sample/lesson1/index.html)  
+２．[CandyShopSite](http://153.126.204.74/sample/lesson2/index.html)  
+３．[CorporateSite](http://153.126.204.74/sample/lesson3/index.html)  
+４．[CorporateSite](http://153.126.204.74/sample/lesson4/index.html)  
+
+[ログイン情報(Basic 認証)]  
+id: admin  
+pass: kuma1234
+
+### DESIGN(Photoshop/Illustrator)  
+1.　[バナー](http://153.126.204.74/study/design01.html)  
+2.　[ランディングページ](http://153.126.204.74/study/design02.html) 
+
+[ログイン情報(Basic 認証)]  
+id: admin  
+pass: kuma1234
+
