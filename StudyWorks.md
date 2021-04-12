@@ -1,8 +1,8 @@
 # 独学制作物
 
-こちらは「桜の紹介」サイトです。
+こちらは「桜の紹介」サイトです。  
 
-![screencapture-153-126-204-74-portfolio-2021-04-12-23_07_25](https://user-images.githubusercontent.com/65232447/114409789-c6cbe780-9be5-11eb-86e7-42be30301ed5.png)
+![screencapture-153-126-204-74-portfolio-2021-04-12-23_07_27](https://user-images.githubusercontent.com/65232447/114410102-0b578300-9be6-11eb-8a26-513b4530f5e9.png)
 
 ## URL とログイン情報
 
