@@ -2,7 +2,7 @@
 
 こちらは「桜の紹介」サイトです。
 
-![screencapture-153-126-204-74-portfolio-2021-04-07-12_59_49](https://user-images.githubusercontent.com/65232447/113808722-95948700-97a1-11eb-91a8-152847fdcb09.png)
+![screencapture-153-126-204-74-portfolio-2021-04-12-23_07_25](https://user-images.githubusercontent.com/65232447/114409789-c6cbe780-9be5-11eb-86e7-42be30301ed5.png)
 
 ## URL とログイン情報
 
