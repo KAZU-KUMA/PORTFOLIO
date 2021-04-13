@@ -44,9 +44,8 @@ html,
 body {
   color: $black;
   box-sizing: border-box;
-  font-family: "Kiwi Maru", "Lato", "Noto Sans JP", "ヒラギノ角ゴ ProN",
-    "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
-    "MS PGothic", sans-serif;
+  // font-family: "Kiwi Maru", "Lato", "Noto Sans JP", sans-serif;
+  font-family: "Kiwi Maru", serif;
   width: 100%;
   overflow-x: hidden;
 }
@@ -73,7 +72,6 @@ li {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-
   padding: 0 1rem;
   @include mq("pc") {
     max-width: 1280px;
@@ -148,16 +146,19 @@ li {
   }
 }
 .header__nav-sp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   width: 30px;
-  padding: 8px 0;
+  height: 30px;
+  z-index: 200;
   &-line {
     position: relative;
     width: 30px;
     height: 2px;
     color: $accent;
     background: currentColor;
-    z-index: 200;
     &:before,
     &:after {
       content: "";
@@ -182,9 +183,6 @@ li {
     overflow: hidden;
   }
   .header__nav-sp {
-    cursor: pointer;
-    padding: 10px 0;
-    display: block;
     &-line {
       background: none;
       &:before {
@@ -210,7 +208,8 @@ li {
   height: calc(100vh - 80px);
   background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.3) 80%,
+      rgba(253, 216, 216, 1),
+      rgba(255, 255, 255, 0.3) 5% 80%,
       rgba(193, 255, 149, 1)
     ),
     url(./img/mv.png);
@@ -369,9 +368,9 @@ li {
 }
 
 /*******************************
-    EVENTS
+    SPOTS
 *******************************/
-.events {
+.spots {
   background: $yellow;
   .inner {
     padding-top: 25px;
@@ -388,12 +387,12 @@ li {
     }
   }
 }
-.events__wrap {
+.spots__wrap {
   display: flex;
   width: 100%;
   padding-bottom: 25px;
 }
-.events__item {
+.spots__item {
   padding: 5px;
   @include mq("pc") {
     padding: 10px;
@@ -445,7 +444,7 @@ li {
   display: grid;
   gap: 5px;
   grid-template-columns: repeat(3, 1fr);
-  @include mq("pc") {
+  @include mq("tab") {
     gap: 10px;
     grid-template-columns: repeat(6, 1fr);
   }
@@ -625,7 +624,7 @@ button {
 #loading {
   width: 100vw;
   height: 100vh;
-  background: $white;
+  background: $primary;
   position: fixed;
   top: 0;
   left: 0;
@@ -636,5 +635,7 @@ button {
     position: absolute;
     top: 50%;
     left: 50%;
+    margin-top: -105px;
+    margin-left: -25px;
   }
 }

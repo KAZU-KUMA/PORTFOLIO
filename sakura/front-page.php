@@ -2,7 +2,7 @@
 <main class="main">
       <div class="mv">
         <div class="mv__item inner">
-          <h2 class="mv__item-title">日本の春の象徴「桜」</h2>
+          <h2 class="mv__item-title" style="white-space: nowrap;">日本の春の象徴「桜」</h2>
           <p class="mv__item-desc">
             春の代表的な花といえば桜ですよね。<br />
             桜を見て春の訪れを感じる方はたくさんいると思います。<br />
@@ -69,36 +69,36 @@
         </div><!--.inner-->
       </section><!--.about-->
 
-      <section class="events" id="events">
+      <section class="spots" id="spots">
         <div class="inner">
-          <h3 class="events__title ttl">EVENTS</h3>
+          <h3 class="spots__title ttl">SPOTS</h3>
 
-          <div class="events__wrap slider">
+          <div class="spots__wrap slider">
             <?php
             $args  = array(
-                'post_type' => 'events',
+                'post_type' => 'spots',
                 'posts_per_page' => 5,
                 'order' => 'ASC',
             );
             $the_query = new WP_Query( $args );
             if ( $the_query->have_posts() ) :
                 while ( $the_query->have_posts() ) : $the_query->the_post();?>
-                    <div class="events__item">
-                        <div class="events__item-img">
-                            <?php $image = get_field('events_image'); ?>
+                    <div class="spots__item">
+                        <div class="spots__item-img">
+                            <?php $image = get_field('spots_image'); ?>
                             <img src="<?=$image['url']; ?>" alt="<?= $image['alt']; ?>" />
                         </div>
-                        <!--.events__item-img-->
-                        <div class="events__item-texts">
-                            <div class="events__item-texts-title"><?=esc_html(get_field('events_title'));?></div>
-                            <p class="events__item-texts-desc"><?=esc_html(get_field('events_text'));?></p>
-                        </div><!--.events__item-texts-->
-                    </div><!--.events__item-->
+                        <!--.spots__item-img-->
+                        <div class="spots__item-texts">
+                            <div class="spots__item-texts-title"><?=esc_html(get_field('spots_title'));?></div>
+                            <p class="spots__item-texts-desc"><?=esc_html(get_field('spots_text'));?></p>
+                        </div><!--.spots__item-texts-->
+                    </div><!--.spots__item-->
                 <?php endwhile;
                 endif; ?>
-          </div><!--.events_wrap-->
+          </div><!--.spots_wrap-->
         </div><!--.inner-->
-      </section><!--.events-->
+      </section><!--.spots-->
 
       <section class="gallery" id="gallery">
         <div class="inner">

@@ -55,9 +55,11 @@ jQuery(function() {
 	infinite: true,
 	slidesToShow: 3,
 	slidesToScroll: 1,
+    pauseOnFocus: false,
+    pauseOnHover: false,
 	responsive: [
     {
-      breakpoint: 770,
+      breakpoint: 750,
       settings: {
         slidesToShow: 1
       }
@@ -127,7 +129,26 @@ jQuery(function() {
     });
 });
 
+/*snowfall(雪または花びら)*/ 
+jQuery(function(){
+    jQuery(document).snowfall({
+        flakeCount : 100,
+        flakeColor : '#FFF',
+        flakeIndex : 500,
+        minSize : 30,
+        maxSize : 50,
+        minSpeed : 2,
+        maxSpeed : 5,
+        round : true,
+        shadow : false,
+        image : 'http://153.126.204.74/portfolio/wp-content/themes/sakura/img/sakura.png'
+    });
+});
+jQuery(function(){
+    jQuery('.snowfall-flakes').delay(1800).fadeOut(500);
+});
+
 /*ローディング*/
-jQuery(window).on('load', function(){
-	jQuery('#loading').delay(0).fadeOut(500);	
+jQuery(window).on('load', function(){	
+    jQuery('#loading').delay(2000).fadeOut(500);	
 });

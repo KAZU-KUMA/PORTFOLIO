@@ -23,13 +23,9 @@ function my_scripts() {
     wp_enqueue_script( 'scrollreveal-script', get_template_directory_uri() . '/js/scrollreveal.min.js', array(), '1.0', true );
     // validate
     wp_enqueue_script( 'validate-script', get_template_directory_uri() . '/js/validate.min.js', array(), '1.0', true );
+    // snowfall
+    wp_enqueue_script( 'snowfall-script', get_template_directory_uri() . '/js/snowfall.min.js', array(), '1.0', true );
     // JSファイル
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array(), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
-
-// Googleフォント
-function add_google_fonts() {
-    wp_enqueue_style( ' add_google_fonts ', ' //fonts.googleapis.com/css2?Kiwi+Maru&display=swap&family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap', false );
-}
-add_action( 'wp_enqueue_scripts', 'add_google_fonts' );

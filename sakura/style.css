@@ -20,7 +20,7 @@ html,
 body {
   color: #444;
   box-sizing: border-box;
-  font-family: "Kiwi Maru", "Lato", "Noto Sans JP", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: "Kiwi Maru", serif;
   width: 100%;
   overflow-x: hidden;
 }
@@ -140,9 +140,13 @@ li {
 }
 
 .header__nav-sp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   width: 30px;
-  padding: 8px 0;
+  height: 30px;
+  z-index: 200;
 }
 
 .header__nav-sp-line {
@@ -151,7 +155,6 @@ li {
   height: 2px;
   color: #ee6e9f;
   background: currentColor;
-  z-index: 200;
 }
 
 .header__nav-sp-line:before, .header__nav-sp-line:after {
@@ -175,12 +178,6 @@ li {
 .open body {
   height: 100%;
   overflow: hidden;
-}
-
-.open .header__nav-sp {
-  cursor: pointer;
-  padding: 10px 0;
-  display: block;
 }
 
 .open .header__nav-sp-line {
@@ -207,7 +204,7 @@ li {
 .mv {
   width: 100%;
   height: calc(100vh - 80px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 80%, #c1ff95), url(./img/mv.png);
+  background: linear-gradient(180deg, #fdd8d8, rgba(255, 255, 255, 0.3) 5% 80%, #c1ff95), url(./img/mv.png);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -412,17 +409,17 @@ li {
 }
 
 /*******************************
-    EVENTS
+    SPOTS
 *******************************/
-.events {
+.spots {
   background: #ffe6a8;
 }
 
-.events .inner {
+.spots .inner {
   padding-top: 25px;
 }
 
-.events .inner:after {
+.spots .inner:after {
   border-top: 10px solid transparent;
   border-left: 50vw solid transparent;
   border-right: 50vw solid #c9feff;
@@ -431,42 +428,42 @@ li {
 }
 
 @media screen and (min-width: 1025px) {
-  .events .inner:after {
+  .spots .inner:after {
     border-top: 25px solid transparent;
     border-bottom: 25px solid #c9feff;
   }
 }
 
-.events__wrap {
+.spots__wrap {
   display: flex;
   width: 100%;
   padding-bottom: 25px;
 }
 
-.events__item {
+.spots__item {
   padding: 5px;
 }
 
 @media screen and (min-width: 1025px) {
-  .events__item {
+  .spots__item {
     padding: 10px;
   }
 }
 
-.events__item-img {
+.spots__item-img {
   width: 100%;
 }
 
-.events__item-img img {
+.spots__item-img img {
   width: 100%;
   border-radius: 20px;
 }
 
-.events__item-texts {
+.spots__item-texts {
   padding: 25px 10px;
 }
 
-.events__item-texts-title {
+.spots__item-texts-title {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -476,19 +473,19 @@ li {
 }
 
 @media screen and (min-width: 1025px) {
-  .events__item-texts-title {
+  .spots__item-texts-title {
     font-size: 20px;
   }
 }
 
-.events__item-texts-desc {
+.spots__item-texts-desc {
   font-size: 12px;
   letter-spacing: 0.2em;
   line-height: 1.75;
 }
 
 @media screen and (min-width: 1025px) {
-  .events__item-texts-desc {
+  .spots__item-texts-desc {
     font-size: 16px;
     line-height: 1.5;
   }
@@ -513,7 +510,7 @@ li {
   grid-template-columns: repeat(3, 1fr);
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 600px) {
   .gallery__wrap {
     gap: 10px;
     grid-template-columns: repeat(6, 1fr);
@@ -738,7 +735,7 @@ button:hover {
 #loading {
   width: 100vw;
   height: 100vh;
-  background: #fff;
+  background: #fdd8d8;
   position: fixed;
   top: 0;
   left: 0;
@@ -751,4 +748,6 @@ button:hover {
   position: absolute;
   top: 50%;
   left: 50%;
+  margin-top: -105px;
+  margin-left: -25px;
 }
