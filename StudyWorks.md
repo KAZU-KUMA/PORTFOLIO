@@ -10,7 +10,7 @@
 id: admin  
 pass: kuma1234
 
-[言語、環境]  
+[言語、開発環境]  
 - 言語・・・HTML/CSS、JS、PHP
 - ツール・・・GitHub(バージョン管理)、 WordPress(CMS)
 - OS・・・Windows
