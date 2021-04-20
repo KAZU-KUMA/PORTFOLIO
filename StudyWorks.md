@@ -25,7 +25,8 @@ pass: kuma1234
 
 ### DESIGN(Photoshop/Illustrator)  
 1.　[バナー](http://153.126.204.74/study/design01.html)  
-2.　[ランディングページ](http://153.126.204.74/study/design02.html) 
+2.　[ランディングページ](http://153.126.204.74/study/design02.html)  
+3.　[アイコン](http://153.126.204.74/study/design03.html)    
 
 [ログイン情報(Basic 認証)]  
 id: admin  
