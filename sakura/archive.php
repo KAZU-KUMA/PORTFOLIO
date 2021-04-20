@@ -8,5 +8,5 @@
         endwhile;
     endif; ?>
 </div>
-<main>
+</main>
 <?php get_footer(); ?>

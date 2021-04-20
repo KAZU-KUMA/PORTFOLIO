@@ -50,11 +50,12 @@ body {
   overflow-x: hidden;
 }
 body {
-  position: relative;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }
 main {
-  min-height: calc(100vh - 280px);
-  padding-bottom: 80px;
+  flex: 1;
 }
 a {
   text-decoration: none;
@@ -428,6 +429,9 @@ li {
     }
   }
 }
+.slide_target {
+  pointer-events: none;
+}
 
 /*******************************
     GALLERY
@@ -454,6 +458,7 @@ li {
   border-radius: 20px;
   img {
     width: 100%;
+    height: 100%;
     transition: transform 0.5s;
     &:hover {
       transform: scale(1.2);
@@ -555,9 +560,9 @@ button {
 .footer {
   width: 100%;
   background: $red;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
   .inner {
     height: 80px;
     @include mq("pc") {

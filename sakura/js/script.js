@@ -14,22 +14,20 @@ jQuery(function(){
     // スクロール設定
     jQuery('#pagetop').click(function(){
         jQuery('html, body').animate(
-            {scrollTop:0}, 1000);
+            {scrollTop:0}, 1000, "swing");
         return false;
     });
 });
 
 /*ページ内スクロール*/
 jQuery(function () {
-  jQuery('a[href^="#"]').click(function(){
-	//リンク先の位置取得、設定
-    var href = jQuery(this).attr("href");
-    var target = jQuery(href == "#" || href == "" ? 'html' : href);
-    var position = target.offset().top;
+  jQuery('.header__nav a[href^="#"]').click(function(){
+	//リンク先の位置取得(idの値を取得)
+    var target = jQuery(this).attr("href");
+    var position = jQuery(target).offset().top;
 	// スクロール設定
     jQuery("html, body").animate({
-      scrollTop: position
-    }, 1000, "swing");
+      scrollTop: position}, 1000, "swing");
     return false;
   });
 });

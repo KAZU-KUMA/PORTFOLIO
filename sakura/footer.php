@@ -2,8 +2,8 @@
       <div class="inner">
         <nav class="footer__nav">
           <ul class="menu">
-            <li class="menu__list"><a href="#">利用規約</a></li>
-            <li class="menu__list"><a href="#">プライバシーポリシー</a></li>
+            <li class="menu__list"><a href="" onclick="return false;">利用規約</a></li>
+            <li class="menu__list"><a href="" onclick="return false;">プライバシーポリシー</a></li>
           </ul>
         </nav>
 

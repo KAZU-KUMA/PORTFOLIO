@@ -3,9 +3,6 @@
 <div class="inner"> 
     <p>ページが見つかりません</p>
 </div>
-<main>
+</main>
 <?php get_footer(); ?>
-
-
-
 

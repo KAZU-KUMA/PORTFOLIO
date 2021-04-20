@@ -26,12 +26,13 @@ body {
 }
 
 body {
-  position: relative;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }
 
 main {
-  min-height: calc(100vh - 280px);
-  padding-bottom: 80px;
+  flex: 1;
 }
 
 a {
@@ -491,6 +492,10 @@ li {
   }
 }
 
+.slide_target {
+  pointer-events: none;
+}
+
 /*******************************
     GALLERY
 *******************************/
@@ -524,6 +529,7 @@ li {
 
 .gallery__item img {
   width: 100%;
+  height: 100%;
   transition: transform 0.5s;
 }
 
@@ -653,9 +659,6 @@ button:hover {
 .footer {
   width: 100%;
   background: #fdd8d8;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 
 .footer .inner {
