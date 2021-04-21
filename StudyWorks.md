@@ -20,8 +20,10 @@ pass: kuma1234
 ### CODING(HTML/CSS/JS)  
 １．[CafeShopSite](http://153.126.204.74/sample/lesson1/index.html)  
 ２．[CandyShopSite](http://153.126.204.74/sample/lesson2/index.html)  
-３．[CorporateSite](http://153.126.204.74/sample/lesson3/index.html)  
-４．[CorporateSite](http://153.126.204.74/sample/lesson4/index.html)  
+３．[FlowerShopSite](http://153.126.204.74/sample/lesson6/index.html)  
+４．[OutdoorSite](http://153.126.204.74/sample/lesson5/index.html)  
+５．[CorporateSite](http://153.126.204.74/sample/lesson3/index.html)  
+６．[CorporateSite](http://153.126.204.74/sample/lesson4/index.html)  
 
 ### DESIGN(Photoshop/Illustrator)  
 1.　[バナー](http://153.126.204.74/study/design01.html)  
