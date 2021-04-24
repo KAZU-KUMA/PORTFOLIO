@@ -736,21 +736,20 @@ button:hover {
 
 /*ローディング*/
 #loading {
-  width: 100vw;
-  height: 100vh;
-  background: #fdd8d8;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fdd8d8;
   z-index: 300;
 }
 
-#loading img {
-  width: 50px;
-  height: 50px;
+#loading__text {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -105px;
-  margin-left: -25px;
+  width: 100%;
+  color: #fff;
+  transform: translate(-50%, -50%);
 }

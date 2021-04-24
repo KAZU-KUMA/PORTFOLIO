@@ -128,25 +128,54 @@ jQuery(function() {
 });
 
 /*snowfall(雪または花びら)*/ 
-jQuery(function(){
-    jQuery(document).snowfall({
-        flakeCount : 100,
-        flakeColor : '#FFF',
-        flakeIndex : 500,
-        minSize : 30,
-        maxSize : 50,
-        minSpeed : 2,
-        maxSpeed : 5,
-        round : true,
-        shadow : false,
-        image : 'http://153.126.204.74/portfolio/wp-content/themes/sakura/img/sakura.png'
-    });
-});
-jQuery(function(){
-    jQuery('.snowfall-flakes').delay(1800).fadeOut(500);
+// jQuery(function(){
+//     jQuery(document).snowfall({
+//         flakeCount : 100,
+//         flakeColor : '#FFF',
+//         flakeIndex : 500,
+//         minSize : 30,
+//         maxSize : 50,
+//         minSpeed : 2,
+//         maxSpeed : 5,
+//         round : true,
+//         shadow : false,
+//         image : 'http://153.126.204.74/portfolio/wp-content/themes/sakura/img/sakura.png'
+//     });
+// });
+// jQuery(function(){
+//     jQuery('.snowfall-flakes').delay(1800).fadeOut(500);
+// });
+
+/*progressbar(ローディング)*/
+var bar = new ProgressBar.Line(loading__text, {
+	easing: 'easeInOut',
+	duration: 2000,
+    //進捗ゲージ
+	strokeWidth: 0.2,
+	color: '#ee6e9f',
+    //ゲージベース
+	trailWidth: 0.2,
+	trailColor: '#fff',
+    //テキスト指定	
+	text: {		
+		style: {
+			position: 'absolute',
+			left: '50%',
+			top: '50%',
+			padding: '0',
+			margin: '-30px 0 0 0',
+			transform:'translate(-50%,-50%)',
+			'font-size':'1.5rem',
+			color: '#ee6e9f',
+		},
+        //自動付与のスタイルを切る
+		autoStyleContainer: false 
+	},
+	step: function(state, bar) {
+		bar.setText(Math.round(bar.value() * 100) + ' %');
+	}
 });
 
-/*ローディング*/
-jQuery(window).on('load', function(){	
-    jQuery('#loading').delay(2000).fadeOut(500);	
-});
+bar.animate(1.0, function () {
+	$("#loading").delay(500).fadeOut(1000);
+});  

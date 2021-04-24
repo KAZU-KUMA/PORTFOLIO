@@ -15,7 +15,7 @@ add_action( 'wp_enqueue_scripts', 'my_styles' );
 function my_scripts() {
     //デフォルトJQuery削除
     wp_deregister_script('jquery');     
-    //　JQuery
+    // JQuery
     wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js' );
     // slick
     wp_enqueue_script( 'slide-script', get_template_directory_uri() . '/js/slick.min.js', array(), '1.0', true );
@@ -23,8 +23,10 @@ function my_scripts() {
     wp_enqueue_script( 'scrollreveal-script', get_template_directory_uri() . '/js/scrollreveal.min.js', array(), '1.0', true );
     // validate
     wp_enqueue_script( 'validate-script', get_template_directory_uri() . '/js/validate.min.js', array(), '1.0', true );
+    // progressbar
+    wp_enqueue_script( 'sprogressbar-script', get_template_directory_uri() . '/js/progressbar.min.js', array(), '1.0', true );
     // snowfall
-    wp_enqueue_script( 'snowfall-script', get_template_directory_uri() . '/js/snowfall.min.js', array(), '1.0', true );
+    // wp_enqueue_script( 'snowfall-script', get_template_directory_uri() . '/js/snowfall.min.js', array(), '1.0', true );
     // JSファイル
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array(), '1.0', true );
 }
