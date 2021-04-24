@@ -127,25 +127,6 @@ jQuery(function() {
     });
 });
 
-/*snowfall(雪または花びら)*/ 
-// jQuery(function(){
-//     jQuery(document).snowfall({
-//         flakeCount : 100,
-//         flakeColor : '#FFF',
-//         flakeIndex : 500,
-//         minSize : 30,
-//         maxSize : 50,
-//         minSpeed : 2,
-//         maxSpeed : 5,
-//         round : true,
-//         shadow : false,
-//         image : 'http://153.126.204.74/portfolio/wp-content/themes/sakura/img/sakura.png'
-//     });
-// });
-// jQuery(function(){
-//     jQuery('.snowfall-flakes').delay(1800).fadeOut(500);
-// });
-
 /*progressbar(ローディング)*/
 var bar = new ProgressBar.Line(loading__text, {
 	easing: 'easeInOut',
@@ -179,3 +160,22 @@ var bar = new ProgressBar.Line(loading__text, {
 bar.animate(1.0, function () {
 	$("#loading").delay(500).fadeOut(1000);
 });  
+
+/*snowfall(雪または花びら)*/ 
+// jQuery(function(){
+//     jQuery(document).snowfall({
+//         flakeCount : 100,
+//         flakeColor : '#FFF',
+//         flakeIndex : 500,
+//         minSize : 30,
+//         maxSize : 50,
+//         minSpeed : 2,
+//         maxSpeed : 5,
+//         round : true,
+//         shadow : false,
+//         image : 'http://153.126.204.74/portfolio/wp-content/themes/sakura/img/sakura.png'
+//     });
+// });
+// jQuery(function(){
+//     jQuery('.snowfall-flakes').delay(1800).fadeOut(500);
+// });

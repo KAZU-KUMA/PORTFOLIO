@@ -203,6 +203,7 @@ li {
     MAIN_VISUAL
  *******************************/
 .mv {
+  position: relative;
   width: 100%;
   height: calc(100vh - 80px);
   background: linear-gradient(180deg, #fdd8d8, rgba(255, 255, 255, 0.3) 5% 80%, #c1ff95), url(./img/mv.png);
@@ -247,6 +248,34 @@ li {
     font-size: 16px;
     line-height: 2.25;
   }
+}
+
+.custom-shape-divider-bottom-1619256456 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1619256456 svg {
+  position: relative;
+  display: block;
+  width: calc(225% + 1.3px);
+  height: 100px;
+  transform: rotateY(180deg);
+}
+
+@media screen and (min-width: 1025px) {
+  .custom-shape-divider-bottom-1619256456 svg {
+    height: 150px;
+  }
+}
+
+.custom-shape-divider-bottom-1619256456 .shape-fill {
+  fill: #c1ff95;
 }
 
 /*******************************
