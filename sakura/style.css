@@ -285,10 +285,6 @@ li {
   background: #c1ff95;
 }
 
-.news .inner {
-  padding-top: 25px;
-}
-
 .news .inner:after {
   border-top: 10px solid transparent;
   border-left: 50vw solid transparent;

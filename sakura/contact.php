@@ -11,7 +11,7 @@ Template Name: CONTACT_RESULT
     mb_internal_encoding("UTF-8");
     $date = date('Y年m月d日 H:i:s');
     $from = "qrki1ulf3d@gmail.com";
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email']) === TRUE && isset($_POST['username']) === TRUE && isset($_POST['message']) === TRUE){
+    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $to = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
         $name = htmlspecialchars($_POST['username'], ENT_QUOTES, 'UTF-8');
         $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
@@ -47,8 +47,12 @@ $messageAdmin = <<< EOD
 EOD;
 
 mb_send_mail($from, "お問い合わせ：".$name, $messageAdmin, "From:SAKURA<qrki1ulf3d@gmail.com>");
+// header('Location: http://153.126.204.74/portfolio/#contact');
+// exit();
     }else{
         print "送信エラー：メールフォームからの送信に失敗しました。お手数ですが再度お試しください。";
+        print"</main>";
+        get_footer();
         exit;
     }
 ?>

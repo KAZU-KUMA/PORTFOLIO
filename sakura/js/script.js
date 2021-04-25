@@ -128,38 +128,40 @@ jQuery(function() {
 });
 
 /*progressbar(ローディング)*/
-var bar = new ProgressBar.Line(loading__text, {
-	easing: 'easeInOut',
-	duration: 2000,
-    //進捗ゲージ
-	strokeWidth: 0.2,
-	color: '#ee6e9f',
-    //ゲージベース
-	trailWidth: 0.2,
-	trailColor: '#fff',
-    //テキスト指定	
-	text: {		
-		style: {
-			position: 'absolute',
-			left: '50%',
-			top: '50%',
-			padding: '0',
-			margin: '-30px 0 0 0',
-			transform:'translate(-50%,-50%)',
-			'font-size':'1.5rem',
-			color: '#ee6e9f',
-		},
-        //自動付与のスタイルを切る
-		autoStyleContainer: false 
-	},
-	step: function(state, bar) {
-		bar.setText(Math.round(bar.value() * 100) + ' %');
-	}
-});
+jQuery(function(){
+    var bar = new ProgressBar.Line(loading__text, {
+        easing: 'easeInOut',
+        duration: 2000,
+        //進捗ゲージ
+        strokeWidth: 0.2,
+        color: '#ee6e9f',
+        //ゲージベース
+        trailWidth: 0.2,
+        trailColor: '#fff',
+        //テキスト指定	
+        text: {		
+            style: {
+                position: 'absolute',
+                left: '50%',
+                top: '50%',
+                padding: '0',
+                margin: '-30px 0 0 0',
+                transform:'translate(-50%,-50%)',
+                'font-size':'1.5rem',
+                color: '#ee6e9f',
+            },
+            //自動付与のスタイルを切る
+            autoStyleContainer: false 
+        },
+        step: function(state, bar) {
+            bar.setText(Math.round(bar.value() * 100) + ' %');
+        }
+    });
 
-bar.animate(1.0, function () {
-	$("#loading").delay(500).fadeOut(1000);
-});  
+    bar.animate(1.0, function () {
+        jQuery("#loading").delay(500).fadeOut(1000);
+    });  
+});
 
 /*snowfall(雪または花びら)*/ 
 // jQuery(function(){
