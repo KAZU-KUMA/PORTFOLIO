@@ -55,15 +55,17 @@ jQuery(function() {
 	slidesToScroll: 1,
     pauseOnFocus: false,
     pauseOnHover: false,
-	responsive: [
-    {
+	responsive: [{
       breakpoint: 750,
       settings: {
         slidesToShow: 1
       }
-    }
-  ]
-    });
+    }]
+  });
+// スマホ対策(タッチ操作イベント)
+  jQuery('.slider').on('touchmove', function(event, slick, currentSlide, nextSlide){
+    jQuery('.slider').slick('slickPlay');
+  });
 });
 
 /*ScrollReveal(フェードインアニメーション)*/ 
@@ -78,54 +80,100 @@ jQuery(function(){
 }); 
 
 /*validate(入力フォーム)*/
-// カスタムルール設定
-jQuery(function() {
-    jQuery.validator.addMethod("space",
-    function(value, element) {
-      return this.optional(element) || value.trim().length > 0;
-    },
-    "必須入力です。"
-    );
-    jQuery("#form").validate({
-        //ルール設定
-        rules: {
-            username: {
-                required: true,
-                space: true,
-                maxlength: 20
-            },
-            email: {
-                required: true,
-                space: true,
-                email: true
-            },
-            message: {
-                required: true,
-                space: true,
-                maxlength: 100
-            },
-        },
-        //エラーメッセージ設定
-        messages: {
-            username: {
-                required: "お名前を入力してください。",
-                maxlength: "お名前は20文字以内で入力してください。"
-            },
-            email: {
-                required: "メールアドレスを入力してください。",
-                email: "正しいメールアドレスを入力してください。"
-            },
-            message: {
-                required: "メッセージを入力してください。",
-                maxlength: "100文字以内で入力してください。"
-            },
-        },
-        //エラーメッセージ表示位置
-        errorPlacement: function(error, element) {
-            error.insertAfter(element);
-        }
-    });
-});
+// jQuery(function() {
+//     // カスタムルール設定
+//     jQuery.validator.addMethod("space",
+//     function(value, element) {
+//       return this.optional(element) || value.trim().length > 0;
+//     },
+//     "必須入力です。"
+//     );
+//     var options = {
+//         //ルール設定
+//         rules: {
+//             username: {
+//                 required: true,
+//                 space: true,
+//                 maxlength: 20
+//             },
+//             email: {
+//                 required: true,
+//                 space: true,
+//                 email: true
+//             },
+//             message: {
+//                 required: true,
+//                 space: true,
+//                 maxlength: 100
+//             },
+//         },
+//         //エラーメッセージ設定
+//         messages: {
+//             username: {
+//                 required: "お名前を入力してください。",
+//                 maxlength: "お名前は20文字以内で入力してください。"
+//             },
+//             email: {
+//                 required: "メールアドレスを入力してください。",
+//                 email: "正しいメールアドレスを入力してください。"
+//             },
+//             message: {
+//                 required: "メッセージを入力してください。",
+//                 maxlength: "100文字以内で入力してください。"
+//             },
+//         },
+//         //エラーメッセージ表示位置
+//         errorPlacement: function(error, element) {
+//             error.insertAfter(element);
+//         }
+//     }
+// /*ajax(入力フォーム)*/
+//     jQuery('#form').submit(function(e) {
+//         //フォーム既定の動作をキャンセル
+//         e.preventDefault();
+//         //validate実行（作成したvalidateのoptionを指定）
+//         jQuery("#form").validate(options);
+//         //エラー時は処理終了
+//         if (jQuery("#form").valid() == false) {
+//             return false;
+//         };
+//       //フォームの入力値を変数に格納
+//       var form_data = jQuery('form').serialize();
+//       //フォームの入力内容をajaxにより送信
+//       jQuery.ajax ({
+//         url: 'ajaxurl',//送信先のURL
+//         type: 'POST',//POST送信
+//         data: form_data,//送信するデータを指定
+//         timeout: 60000,  //タイムアウトの設定
+//         //重複送信を避けるためにボタンを無効化/有効化
+//         beforeSend: function (xhr, settings) {
+//           jQuery('.submit').attr('disabled', true);
+//         },
+//         complete: function(xhr, textStatus) {
+//           jQuery('.submit').attr('disabled', false);
+//         }
+//       }).done(function(data, textStatus, jqXHR) {
+//           //通信成功時の処理
+//           jQuery('form')[0].reset();//フォームに入力値をリセット
+//           jQuery('#result').text(data);//phpから返ってきたメッセージを挿入
+//           jQuery('#result').text('送信完了しました。');
+//           const result = document.getElementById("result")
+//           result.style.display ="flex";//メッセージ背景表示
+//       }).fail(function(jqXHR, textStatus, errorThrown) {
+//           //通信失敗時の処理
+//           jQuery('#result').text('送信できませんでした。');
+//           const result = document.getElementById("result")
+//           result.style.display ="flex";//メッセージ背景表示 
+//       });
+//     });
+//   });
+/*メッセージ非表示*/
+// jQuery(function(){
+// 	// 送信ボタンクリックで非表示
+// 	jQuery('#submit').click(function(){
+// 		// jQuery('div.wpcf7-response-output').delay(10000).fadeOut(500);
+// 	});
+// });
 
 /*progressbar(ローディング)*/
 jQuery(function(){
@@ -160,13 +208,13 @@ jQuery(function(){
 
     bar.animate(1.0, function () {
         jQuery("#loading").delay(500).fadeOut(1000);
-    });  
+    });
 });
 
 /*snowfall(雪または花びら)*/ 
 // jQuery(function(){
 //     jQuery(document).snowfall({
-//         flakeCount : 100,
+//         flakeCount : 30,
 //         flakeColor : '#FFF',
 //         flakeIndex : 500,
 //         minSize : 30,

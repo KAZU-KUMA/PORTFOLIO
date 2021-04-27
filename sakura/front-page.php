@@ -134,21 +134,23 @@
         <div class="inner">
           <h3 class="contact__title ttl">CONTACT</h3>
           <div class="contact__wrap">
-            <form action="/portfolio/contact/" method="POST" id="form">
-              <div class="contact__item">
-                <label for="name">お名前<span class="required">必須</span></label>
-                <input type="text" id="name" name="username" />
-              </div>
-              <div class="contact__item">
-                <label for="email">メールアドレス<span class="required">必須</span></label>
-                <input type="text" id="email" name="email" />
-              </div>
-              <div class="contact__item">
-                <label for="message">メッセージ<span class="required">必須</span></label>
-                <textarea id="message" name="message"></textarea>
-              </div>
-              <input type="submit" class="submit" value="送信" />
-            </form>
+            <!-- <form action="/portfolio/contact/" method="POST" id="form">
+                <div class="contact__item">
+                  <label for="name">お名前<span class="required">必須</span></label>
+                  <input type="text" id="name" name="username" />
+                </div>
+                <div class="contact__item">
+                  <label for="email">メールアドレス<span class="required">必須</span></label>
+                  <input type="text" id="email" name="email" />
+                </div>
+                <div class="contact__item">
+                  <label for="message">メッセージ<span class="required">必須</span></label>
+                  <textarea id="message" name="message"></textarea>
+                </div>
+                <div id="result"></div>
+                <input type="submit" class="submit" value="送信" /> -->
+                <?php echo do_shortcode( '[contact-form-7 id="135" title="コンタクトフォーム"]' ); ?>
+            <!-- </form> -->
           </div>
           <!--.contact__wrap-->
         </div>
@@ -156,4 +158,5 @@
       </section>
       <!--.contact-->
     </main>
+    <script type="text/javascript">wpcf7.cached = 0; </script>
 <?php get_footer(); ?>

@@ -4,7 +4,7 @@ Theme Name: SAKURA
 Theme URL: https://kuma-portfolio.com/
 Author: KAZUKI KUMAKURA
 Description:　オリジナルテーマ(2021.4.5)
-Version: 1.0
+Version: 1.5
 */
 /* CSS Document */
 @charset "UTF-8";
@@ -116,7 +116,7 @@ li {
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.8);
-    z-index: 100;
+    z-index: 900;
     display: grid;
     gap: 50px;
     justify-items: center;
@@ -156,7 +156,7 @@ li {
   cursor: pointer;
   width: 30px;
   height: 30px;
-  z-index: 200;
+  z-index: 950;
   &-line {
     position: relative;
     width: 30px;
@@ -508,6 +508,7 @@ li {
     }
   }
   input[type="text"],
+  input[type="email"],
   textarea {
     width: 100%;
     box-sizing: border-box;
@@ -525,11 +526,14 @@ li {
     resize: none;
   }
   label {
-    font-size: 12px;
+    font-size: 12px !important;
     letter-spacing: 0.2em;
     line-height: 1.75;
     @include mq("pc") {
-      font-size: 16px;
+      font-size: 16px !important;
+    }
+    &.error {
+      color: #f00 !important;
     }
   }
 }
@@ -537,14 +541,12 @@ li {
   width: 100%;
 }
 .contact__item {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 10px;
 }
 .contact__wrap-result {
   padding: 50px 0;
 }
-.required {
+span.required {
   font-size: 12px;
   letter-spacing: 0.2em;
   line-height: 1.75;
@@ -555,8 +557,29 @@ li {
     font-size: 16px;
   }
 }
-.error {
+// Contact Form 7
+.wpcf7 form .wpcf7-response-output {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+}
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output {
+  background-color: $white;
   color: #f00;
+  border: 1px solid #f00;
+  border-radius: 5px;
+}
+#result,
+.wpcf7 form.sent .wpcf7-response-output {
+  background-color: $white;
+  color: $secondary;
+  border: 1px solid $secondary;
+  border-radius: 5px;
+}
+.wpcf7 .wpcf7-not-valid {
+  background-color: rgba(255, 0, 115, 0.1) !important;
+  border: 2px solid #f00 !important;
 }
 input[type="submit"],
 button {
@@ -658,7 +681,7 @@ button {
   width: 100vw;
   height: 100vh;
   background: $primary;
-  z-index: 300;
+  z-index: 999;
   &__text {
     position: absolute;
     top: 50%;
@@ -667,4 +690,7 @@ button {
     color: $white;
     transform: translate(-50%, -50%);
   }
+}
+.ajax-loader {
+  display: none !important;
 }

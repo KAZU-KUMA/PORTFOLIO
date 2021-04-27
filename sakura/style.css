@@ -4,7 +4,7 @@ Theme Name: SAKURA
 Theme URL: https://kuma-portfolio.com/
 Author: KAZUKI KUMAKURA
 Description:　オリジナルテーマ(2021.4.5)
-Version: 1.0
+Version: 1.5
 */
 /* CSS Document */
 /*カラー*/
@@ -105,7 +105,7 @@ li {
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 100;
+  z-index: 900;
   display: grid;
   gap: 50px;
   justify-items: center;
@@ -147,7 +147,7 @@ li {
   cursor: pointer;
   width: 30px;
   height: 30px;
-  z-index: 200;
+  z-index: 950;
 }
 
 .header__nav-sp-line {
@@ -586,6 +586,7 @@ li {
 }
 
 .contact input[type="text"],
+.contact input[type="email"],
 .contact textarea {
   width: 100%;
   box-sizing: border-box;
@@ -596,6 +597,7 @@ li {
 }
 
 .contact input[type="text"].error,
+.contact input[type="email"].error,
 .contact textarea.error {
   background-color: rgba(255, 0, 115, 0.1);
   border: 2px solid #f00;
@@ -607,15 +609,19 @@ li {
 }
 
 .contact label {
-  font-size: 12px;
+  font-size: 12px !important;
   letter-spacing: 0.2em;
   line-height: 1.75;
 }
 
 @media screen and (min-width: 1025px) {
   .contact label {
-    font-size: 16px;
+    font-size: 16px !important;
   }
+}
+
+.contact label.error {
+  color: #f00 !important;
 }
 
 .contact__wrap {
@@ -623,8 +629,6 @@ li {
 }
 
 .contact__item {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 10px;
 }
 
@@ -632,7 +636,7 @@ li {
   padding: 50px 0;
 }
 
-.required {
+span.required {
   font-size: 12px;
   letter-spacing: 0.2em;
   line-height: 1.75;
@@ -642,13 +646,36 @@ li {
 }
 
 @media screen and (min-width: 1025px) {
-  .required {
+  span.required {
     font-size: 16px;
   }
 }
 
-.error {
+.wpcf7 form .wpcf7-response-output {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output {
+  background-color: #fff;
   color: #f00;
+  border: 1px solid #f00;
+  border-radius: 5px;
+}
+
+#result,
+.wpcf7 form.sent .wpcf7-response-output {
+  background-color: #fff;
+  color: #6d9d88;
+  border: 1px solid #6d9d88;
+  border-radius: 5px;
+}
+
+.wpcf7 .wpcf7-not-valid {
+  background-color: rgba(255, 0, 115, 0.1) !important;
+  border: 2px solid #f00 !important;
 }
 
 input[type="submit"],
@@ -767,7 +794,7 @@ button:hover {
   width: 100vw;
   height: 100vh;
   background: #fdd8d8;
-  z-index: 300;
+  z-index: 999;
 }
 
 #loading__text {
@@ -777,4 +804,8 @@ button:hover {
   width: 100%;
   color: #fff;
   transform: translate(-50%, -50%);
+}
+
+.ajax-loader {
+  display: none !important;
 }

@@ -47,10 +47,13 @@ $messageAdmin = <<< EOD
 EOD;
 
 mb_send_mail($from, "お問い合わせ：".$name, $messageAdmin, "From:SAKURA<qrki1ulf3d@gmail.com>");
+        print "送信完了しました。"."\n"."お問い合わせありがとうございました。";
+        print"</main>";
+        get_footer();
+        exit();
 // header('Location: http://153.126.204.74/portfolio/#contact');
-// exit();
     }else{
-        print "送信エラー：メールフォームからの送信に失敗しました。お手数ですが再度お試しください。";
+        print "送信エラー：フォームからの送信に失敗しました。お手数ですが再度お試しください。";
         print"</main>";
         get_footer();
         exit;
