@@ -87,12 +87,12 @@ jQuery(function(){
         speed: 500,
         delay: 100,
     });
-},1500);
+},1000);
 });
 
 /*もっと見るボタン*/
 jQuery(function() {
-    var show = 6; //最初に表示する件数
+    var show = 18; //最初に表示する件数
     var num = 6;  //clickごとに表示したい件数
     var contents = '.gallery__item'; // 対象のコンテンツ
     // 初期設定(クラス付与)

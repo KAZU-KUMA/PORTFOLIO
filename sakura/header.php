@@ -4,8 +4,11 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="robots" content="noindex,nofollow" />
+    <!-- スマホ用アイコン画像 -->
+    <link rel="apple-touch-icon" href="<?= get_template_directory_uri(); ?>/img/apple-touch-icon.png" sizes="180x180"/>
     <!-- ファビコン -->
-    <link rel="icon" href="<?= get_template_directory_uri(); ?>/img/favicon.png" type="image/png" />
+    <link rel="icon" href="<?= get_template_directory_uri(); ?>/img/favicon.png" type="image/png" sizes="16x16"/>
     <!-- Font Awesome -->
     <link
       rel="stylesheet"

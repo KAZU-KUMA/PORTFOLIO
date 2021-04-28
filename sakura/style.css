@@ -285,8 +285,8 @@ button:hover,
 
 .mv__item-desc {
   color: #fff;
-  font-size: 12px;
-  letter-spacing: 0.15em;
+  font-size: 14px;
+  letter-spacing: 0.2em;
   line-height: 1.75;
   opacity: 0;
 }
@@ -295,7 +295,6 @@ button:hover,
   .mv__item-desc {
     font-size: 16px;
     line-height: 2.25;
-    letter-spacing: 0.2em;
   }
 }
 
@@ -654,6 +653,14 @@ button:hover,
   .contact .inner {
     text-align: left;
   }
+}
+
+.contact .contact__wrap {
+  width: 100%;
+}
+
+.contact .contact__item {
+  margin-bottom: 10px;
 }
 
 .contact input[type="text"],
