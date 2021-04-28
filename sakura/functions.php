@@ -25,32 +25,11 @@ function my_scripts() {
     wp_enqueue_script( 'validate-script', get_template_directory_uri() . '/js/validate.min.js', array(), '1.0', true );
     // progressbar
     wp_enqueue_script( 'sprogressbar-script', get_template_directory_uri() . '/js/progressbar.min.js', array(), '1.0', true );
-    // snowfall
-    wp_enqueue_script( 'snowfall-script', get_template_directory_uri() . '/js/snowfall.min.js', array(), '1.0', true );
+    // textanimation
+    wp_enqueue_script( 'textanime-script', get_template_directory_uri() . '/js/textAnimation.min.js', array(), '1.0', true );
+    // particles
+    wp_enqueue_script( 'particles-script', '//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js', array(), '1.0', true );
     // JSファイル
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array(), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
-
-function add_my_ajaxurl() {
-?>
-      <script>
-          var ajaxurl = '<?php echo admin_url( 'contact.php'); ?>';
-      </script>
-<?php
-}
-add_action( 'wp_head', 'add_my_ajaxurl', 1 );
-
-// function my_ajax(){
-//     // POST送信で受け取ったURLから投稿IDを取得
-//     $to = $_POST['email'];
-//     $name = $_POST['username'];
-//     $message = $_POST['message'];
-//     // WordPressの実行を停止
-//     echo $to;
-//     echo $name;
-//     echo $message;
-//     wp_die();
-// }
-// add_action( 'wp_ajax_my_ajax_action', 'my_ajax' );
-// add_action( 'wp_ajax_nopriv_my_ajax_action', 'my_ajax' );

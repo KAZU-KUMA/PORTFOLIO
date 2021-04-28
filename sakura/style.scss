@@ -44,14 +44,11 @@ html,
 body {
   color: $black;
   box-sizing: border-box;
-  // font-family: "Kiwi Maru", "Lato", "Noto Sans JP", sans-serif;
   font-family: "Kiwi Maru", serif;
   width: 100%;
   overflow-x: hidden;
 }
-html {
-  // scroll-behavior: smooth;
-}
+// フッター最下部固定
 body {
   display: flex;
   flex-flow: column;
@@ -93,10 +90,26 @@ li {
     font-size: 30px;
   }
 }
-.center {
+input[type="submit"],
+button,
+.btn {
+  display: block;
   width: 100%;
-  text-align: center;
+  line-height: 50px;
   margin: 0 auto;
+  text-align: center;
+  color: $white;
+  background: $accent;
+  border: 1px solid $accent;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  border-radius: 5px;
+  @include mq("pc") {
+    font-size: 16px;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
 }
 /*******************************
     HEADER
@@ -104,6 +117,7 @@ li {
 .header {
   width: 100%;
   background: $red;
+  box-shadow: 0 10px 10px $red;
   .inner {
     flex-direction: row;
     justify-content: space-between;
@@ -211,28 +225,42 @@ li {
   position: relative;
   width: 100%;
   height: calc(100vh - 80px);
-  background: linear-gradient(
-      180deg,
-      rgba(253, 216, 216, 1),
-      rgba(255, 255, 255, 0.3) 5% 80%,
-      rgba(193, 255, 149, 1)
-    ),
-    url(./img/mv.png);
+  z-index: -1;
+}
+.wrapper {
+  width: 100%;
+  height: calc(100vh - 200px);
+  position: absolute;
+  top: 120px;
+  left: 0;
+}
+.mv__img {
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-image: url(./img/mv.png);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  .inner {
-    padding-top: 100px;
-    @include mq("pc") {
-      display: block;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.3);
   }
 }
 .mv__item {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   &-title {
     color: $accent;
     font-size: 24px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.4em;
     line-height: 1;
     padding-bottom: 20px;
     @include mq("pc") {
@@ -242,43 +270,25 @@ li {
   &-desc {
     color: $white;
     font-size: 12px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     line-height: 1.75;
+    opacity: 0;
     @include mq("pc") {
       font-size: 16px;
       line-height: 2.25;
+      letter-spacing: 0.2em;
     }
   }
 }
-.custom-shape-divider-bottom-1619256456 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-  svg {
-    position: relative;
-    display: block;
-    width: calc(225% + 1.3px);
-    height: 100px;
-    transform: rotateY(180deg);
-    @include mq("pc") {
-      height: 150px;
-    }
-  }
-  .shape-fill {
-    fill: #c1ff95;
-  }
-}
+
 /*******************************
     NEWS
  *******************************/
 .news {
+  position: relative;
   background: $green;
   .inner {
-    // padding-top: 25px;
+    padding-top: 25px;
     &:after {
       border-top: 10px solid transparent;
       border-left: 50vw solid transparent;
@@ -321,7 +331,31 @@ li {
     }
   }
 }
-
+.custom-shape-divider-bottom-1619256456 {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  @include mq("pc") {
+    top: -150px;
+  }
+  svg {
+    position: relative;
+    display: block;
+    width: calc(225% + 1.3px);
+    height: 100px;
+    transform: rotateY(180deg);
+    @include mq("pc") {
+      height: 150px;
+    }
+  }
+  .shape-fill {
+    fill: #c1ff95;
+  }
+}
 /*******************************
     ABOUT
  *******************************/
@@ -471,16 +505,20 @@ li {
 .gallery__wrap {
   width: 100%;
   display: grid;
-  gap: 5px;
+  column-gap: 5px;
   grid-template-columns: repeat(3, 1fr);
   @include mq("tab") {
-    gap: 10px;
+    column-gap: 10px;
     grid-template-columns: repeat(6, 1fr);
   }
 }
 .gallery__item {
   overflow: hidden;
   border-radius: 20px;
+  margin-bottom: 5px;
+  @include mq("tab") {
+    margin-bottom: 10px;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -490,8 +528,12 @@ li {
     }
   }
 }
-.more {
-  padding-bottom: 25px;
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  margin: 0 10px;
+  padding: 0;
 }
 
 /*******************************
@@ -516,10 +558,6 @@ li {
     border: 1px solid $white;
     border-radius: 5px;
     padding: 10px;
-    &.error {
-      background-color: rgba(255, 0, 115, 0.1);
-      border: 2px solid #f00;
-    }
   }
   textarea {
     height: 200px;
@@ -536,15 +574,6 @@ li {
       color: #f00 !important;
     }
   }
-}
-.contact__wrap {
-  width: 100%;
-}
-.contact__item {
-  margin-bottom: 10px;
-}
-.contact__wrap-result {
-  padding: 50px 0;
 }
 span.required {
   font-size: 12px;
@@ -581,26 +610,6 @@ span.required {
   background-color: rgba(255, 0, 115, 0.1) !important;
   border: 2px solid #f00 !important;
 }
-input[type="submit"],
-button {
-  display: block;
-  width: 100%;
-  height: 50px;
-  margin: 0 auto;
-  text-align: center;
-  color: $white;
-  background: $accent;
-  border: 1px solid $accent;
-  font-size: 14px;
-  letter-spacing: 0.2em;
-  border-radius: 5px;
-  @include mq("pc") {
-    font-size: 16px;
-  }
-  &:hover {
-    opacity: 0.8;
-  }
-}
 
 /*******************************
     FOOTER
@@ -608,9 +617,6 @@ button {
 .footer {
   width: 100%;
   background: $red;
-  // position: absolute;
-  // bottom: 0;
-  // left: 0;
   .inner {
     height: 80px;
     @include mq("pc") {

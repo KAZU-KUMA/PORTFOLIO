@@ -16,13 +16,6 @@
       href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700;900&display=swap"
     />
     <title><?php bloginfo('name'); ?></title>
-    <?php if(!is_front_page()){ ?>
-        <style>
-        div.header__nav-sp{
-          display:none;
-        }
-        </style>
-    <?php } ?>
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>

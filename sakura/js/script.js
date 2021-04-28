@@ -56,7 +56,7 @@ jQuery(function() {
     pauseOnFocus: false,
     pauseOnHover: false,
 	responsive: [{
-      breakpoint: 750,
+      breakpoint: 500,
       settings: {
         slidesToShow: 1
       }
@@ -76,117 +76,63 @@ jQuery(function(){
         distance: '500px',
         easing:  'ease-in-out',
         opacity: 0,
+        interval: 100,
     });
 }); 
 
-/*validate(入力フォーム)*/
-// jQuery(function() {
-//     // カスタムルール設定
-//     jQuery.validator.addMethod("space",
-//     function(value, element) {
-//       return this.optional(element) || value.trim().length > 0;
-//     },
-//     "必須入力です。"
-//     );
-//     var options = {
-//         //ルール設定
-//         rules: {
-//             username: {
-//                 required: true,
-//                 space: true,
-//                 maxlength: 20
-//             },
-//             email: {
-//                 required: true,
-//                 space: true,
-//                 email: true
-//             },
-//             message: {
-//                 required: true,
-//                 space: true,
-//                 maxlength: 100
-//             },
-//         },
-//         //エラーメッセージ設定
-//         messages: {
-//             username: {
-//                 required: "お名前を入力してください。",
-//                 maxlength: "お名前は20文字以内で入力してください。"
-//             },
-//             email: {
-//                 required: "メールアドレスを入力してください。",
-//                 email: "正しいメールアドレスを入力してください。"
-//             },
-//             message: {
-//                 required: "メッセージを入力してください。",
-//                 maxlength: "100文字以内で入力してください。"
-//             },
-//         },
-//         //エラーメッセージ表示位置
-//         errorPlacement: function(error, element) {
-//             error.insertAfter(element);
-//         }
-//     }
-// /*ajax(入力フォーム)*/
-//     jQuery('#form').submit(function(e) {
-//         //フォーム既定の動作をキャンセル
-//         e.preventDefault();
-//         //validate実行（作成したvalidateのoptionを指定）
-//         jQuery("#form").validate(options);
-//         //エラー時は処理終了
-//         if (jQuery("#form").valid() == false) {
-//             return false;
-//         };
-//       //フォームの入力値を変数に格納
-//       var form_data = jQuery('form').serialize();
-//       //フォームの入力内容をajaxにより送信
-//       jQuery.ajax ({
-//         url: 'ajaxurl',//送信先のURL
-//         type: 'POST',//POST送信
-//         data: form_data,//送信するデータを指定
-//         timeout: 60000,  //タイムアウトの設定
-//         //重複送信を避けるためにボタンを無効化/有効化
-//         beforeSend: function (xhr, settings) {
-//           jQuery('.submit').attr('disabled', true);
-//         },
-//         complete: function(xhr, textStatus) {
-//           jQuery('.submit').attr('disabled', false);
-//         }
-//       }).done(function(data, textStatus, jqXHR) {
-//           //通信成功時の処理
-//           jQuery('form')[0].reset();//フォームに入力値をリセット
-//           jQuery('#result').text(data);//phpから返ってきたメッセージを挿入
-//           jQuery('#result').text('送信完了しました。');
-//           const result = document.getElementById("result")
-//           result.style.display ="flex";//メッセージ背景表示
-//       }).fail(function(jqXHR, textStatus, errorThrown) {
-//           //通信失敗時の処理
-//           jQuery('#result').text('送信できませんでした。');
-//           const result = document.getElementById("result")
-//           result.style.display ="flex";//メッセージ背景表示 
-//       });
-//     });
-//   });
-/*メッセージ非表示*/
-// jQuery(function(){
-// 	// 送信ボタンクリックで非表示
-// 	jQuery('#submit').click(function(){
-// 		// jQuery('div.wpcf7-response-output').delay(10000).fadeOut(500);
-// 	});
-// });
+/*文字の流れ*/
+jQuery(function(){
+    setTimeout(function(){
+    jQuery('.mv__item-desc').textAnimation({
+        speed: 500,
+        delay: 100,
+    });
+},1500);
+});
+
+/*もっと見るボタン*/
+jQuery(function() {
+    var show = 6; //最初に表示する件数
+    var num = 6;  //clickごとに表示したい件数
+    var contents = '.gallery__item'; // 対象のコンテンツ
+    // 初期設定(クラス付与)
+    jQuery(contents + ':nth-child(n + ' + (show + 1) + ')').addClass('hidden');
+    // ボタンクリック時(クラス削除)
+    jQuery(".btn").click(function(){
+    jQuery(contents + '.hidden').slice(0, num).removeClass('hidden');
+    // ボタン非表示
+    if (jQuery(contents + '.hidden').length == 0) {
+        jQuery('.btn').fadeOut();
+    }
+    });
+});
+
+/*パララックス*/ 
+jQuery(function() {
+    if (jQuery(window).width() > 1366) {
+    // スクロール値
+    jQuery(window).scroll(function() {
+        var scroll = jQuery(window).scrollTop();
+　　// 拡大縮小スケール
+    jQuery('.mv__img').css({
+    transform: 'scale('+(100 + scroll/10)/100+')',
+        });
+    });
+  }
+});
 
 /*progressbar(ローディング)*/
 jQuery(function(){
     var bar = new ProgressBar.Line(loading__text, {
         easing: 'easeInOut',
-        duration: 2000,
-        //進捗ゲージ
+        duration: 1500,
+        // 進捗ゲージ
         strokeWidth: 0.2,
         color: '#ee6e9f',
-        //ゲージベース
+        // ゲージベース
         trailWidth: 0.2,
         trailColor: '#fff',
-        //テキスト指定	
+        // テキスト指定	
         text: {		
             style: {
                 position: 'absolute',
@@ -198,34 +144,102 @@ jQuery(function(){
                 'font-size':'1.5rem',
                 color: '#ee6e9f',
             },
-            //自動付与のスタイルを切る
+            // 自動付与スタイル
             autoStyleContainer: false 
         },
         step: function(state, bar) {
             bar.setText(Math.round(bar.value() * 100) + ' %');
         }
     });
-
+    // ローディング画面非表示 
     bar.animate(1.0, function () {
-        jQuery("#loading").delay(500).fadeOut(1000);
+        jQuery("#loading").delay(250).fadeOut(500);
     });
 });
 
-/*snowfall(雪または花びら)*/ 
-// jQuery(function(){
-//     jQuery(document).snowfall({
-//         flakeCount : 30,
-//         flakeColor : '#FFF',
-//         flakeIndex : 500,
-//         minSize : 30,
-//         maxSize : 50,
-//         minSpeed : 2,
-//         maxSpeed : 5,
-//         round : true,
-//         shadow : false,
-//         image : 'http://153.126.204.74/portfolio/wp-content/themes/sakura/img/sakura.png'
-//     });
-// });
-// jQuery(function(){
-//     jQuery('.snowfall-flakes').delay(1800).fadeOut(500);
-// });
+/*particles(花びら)*/ 
+jQuery(function(){
+    particlesJS("wrapper", {
+        "particles":{
+            "number":{
+                "value":30,
+                "density":{
+                    "enable":true,
+                    "value_area":1121.6780303333778
+                }
+            },
+            "color":{
+                "value":"#fff"
+            },
+            "shape":{
+                "type":"image",
+                "stroke":{
+                    "width":0,
+                },
+                "image":{
+                    "src":'http://153.126.204.74/portfolio/wp-content/themes/sakura/img/sakura.png',
+                    "width":120,
+                    "height":120
+                }
+            },
+            "opacity":{
+                "value":0.06409588744762158,
+                "random":true,
+                "anim":{
+                    "enable":false,
+                    "speed":1,
+                    "opacity_min":0.1,
+                    "sync":false
+                }
+            },
+            "size":{
+                "value":8.011985930952697,
+                "random":true,
+                "anim":{
+                    "enable":false,
+                    "speed":4,
+                    "size_min":0.1,
+                    "sync":false
+                }
+            },
+            "line_linked":{
+                "enable":false,
+            },
+            "move":{
+                "enable":true,
+                "speed":7,
+                "direction":"bottom-right",
+                "random":false,
+                "straight":false,
+                "out_mode":"out",
+                "bounce":false,
+                "attract":{
+                    "enable":false,
+                    "rotateX":281.9177489524316,
+                    "rotateY":127.670995809726
+                }
+            }
+        },
+        "interactivity":{
+            "detect_on":"canvas",
+            "events":{
+                "onhover":{
+                    "enable":false,
+                },
+                "onclick":{
+                    "enable":false,
+                },
+                "resize":true
+            }
+        },
+        "retina_detect":false
+    });
+});
+
+/*スペース除去*/ 
+jQuery(function(){
+    jQuery("#submit").click(function(){
+        input.trim();
+    });
+});
+

@@ -16,6 +16,7 @@
     <div id="pagetop">
       <a href="#"><i class="fas fa-chevron-up"></i></a>
     </div>
+  <script type="text/javascript">wpcf7.cached = 0; </script>
   <?php wp_footer(); ?>
   </body>
 </html>
