@@ -326,3 +326,27 @@ jQuery(function(){
         "retina_detect":false
     });
 });
+
+/*ダークモード*/
+// jQuery(function(){
+//     var date = new Date();
+//     var time = date.getHours();
+//     if(20 <= time){
+//         jQuery("html").addClass( "dark" );
+//     }else{
+//         jQuery("html").removeClass( "dark" );
+//     }
+// });
+
+/*マウスストーカー*/
+jQuery(function(){
+	jQuery(document).on("mousemove",function(e){
+		jQuery("#cursor").css({transform: 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)'});
+        jQuery("#follower").css({transform: 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)'});
+	});
+    jQuery("a, button, input,.btn, .header__nav-sp").hover(function() {
+        jQuery("#follower").addClass("active");
+    }, function() {
+        jQuery("#follower").removeClass("active");
+    });   
+}); 

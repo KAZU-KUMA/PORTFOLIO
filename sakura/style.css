@@ -7,12 +7,12 @@ Description:　オリジナルテーマ(2021.4.5)
 Version: 1.5
 */
 /* CSS Document */
+/*ブレイクポイント、モード*/
+/*メディアクエリー*/
 /*カラー*/
 /* 背景色*/
 /*太さ*/
 /*フォント*/
-/*ブレイクポイント*/
-/*メディアクエリー*/
 /*******************************
  	COMMON
 *******************************/
@@ -23,6 +23,11 @@ body {
   font-family: "Kiwi Maru", serif;
   width: 100%;
   overflow-x: hidden;
+}
+
+html.dark {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 body {
@@ -169,7 +174,6 @@ button:hover,
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   width: 30px;
   height: 30px;
   z-index: 950;
@@ -379,38 +383,16 @@ button:hover,
   width: 100%;
 }
 
-@media screen and (min-width: 1280px) {
-  .topic__item {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-}
-
-.topic__item-img {
-  margin-bottom: -5px;
-  width: 100%;
-}
-
-@media screen and (min-width: 1280px) {
-  .topic__item-img {
-    width: 608px;
-  }
-}
-
 .topic__item-img img {
+  display: block;
   width: 100%;
-  border-radius: 10px 10px 0 0;
-}
-
-@media screen and (min-width: 1280px) {
-  .topic__item-img img {
-    border-radius: 0 10px 10px 0;
-  }
+  object-fit: contain;
 }
 
 .topic__item-map img {
+  display: block;
   width: 100%;
-  height: 246px;
+  object-fit: contain;
 }
 
 .topic__title {
@@ -428,6 +410,7 @@ button:hover,
   letter-spacing: 0.1em;
   line-height: 1;
   font-weight: bold;
+  -webkit-animation: blink 1s ease-in-out infinite alternate;
   animation: blink 1s ease-in-out infinite alternate;
 }
 
@@ -435,6 +418,15 @@ button:hover,
   .topic__title::after {
     font-size: 16px;
     left: 6rem;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -455,14 +447,12 @@ table {
   width: 100%;
   margin-bottom: 25px;
   overflow: hidden;
-  border-radius: 0 0 10px 10px;
+  border-radius: 10px;
 }
 
 @media screen and (min-width: 1280px) {
   table {
-    border-radius: 10px 0 0 10px;
-    width: 608px;
-    height: 405px;
+    width: 640px;
   }
 }
 
@@ -740,12 +730,14 @@ table td {
 .gallery__wrap {
   width: 100%;
   display: grid;
+  -moz-column-gap: 5px;
   column-gap: 5px;
   grid-template-columns: repeat(3, 1fr);
 }
 
 @media screen and (min-width: 600px) {
   .gallery__wrap {
+    -moz-column-gap: 10px;
     column-gap: 10px;
     grid-template-columns: repeat(6, 1fr);
   }
@@ -967,7 +959,6 @@ span.required {
   border: 1px solid #6d9d88;
   color: #fff;
   text-align: center;
-  cursor: pointer;
   border-radius: 50%;
 }
 
@@ -997,4 +988,49 @@ span.required {
 
 .ajax-loader {
   display: none !important;
+}
+
+/*マウスストーカー*/
+@media screen and (min-width: 1280px) {
+  #cursor,
+  #follower {
+    pointer-events: none;
+    border-radius: 50%;
+    background: #6d9d88;
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    z-index: 99999;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #follower {
+    background: #fdfe00;
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    z-index: 99998;
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+  }
+  #follower.active {
+    top: -30px;
+    left: -30px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  html,
+  body,
+  a {
+    cursor: none;
+  }
 }

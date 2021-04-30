@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="robots" content="noindex,nofollow" />
     <!-- スマホ用アイコン画像 -->
-    <link rel="apple-touch-icon" href="<?= get_template_directory_uri(); ?>/img/apple-touch-icon.png" sizes="180x180"/>
+    <link rel="apple-touch-icon" href="<?= get_template_directory_uri(); ?>/img/apple-touch-icon.png"  type="image/png" sizes="180x180"/>
     <!-- ファビコン -->
     <link rel="icon" href="<?= get_template_directory_uri(); ?>/img/favicon.png" type="image/png" sizes="16x16"/>
     <!-- Font Awesome -->
@@ -27,6 +27,9 @@
           <div id="loading__text"></div>
         </div>
     <?php } ?>
+
+    <div id="cursor"></div>
+    <div id="follower"></div>
 
     <header class="header">
       <div class="inner">

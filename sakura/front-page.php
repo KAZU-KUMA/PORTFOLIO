@@ -56,37 +56,52 @@
 
         <div class="topic__wrap">
           <div class="topic__item">
-
-            <div class="topic__item-img">
-                <img src="http://153.126.204.74/portfolio/wp-content/themes/sakura/img/topic_img.png" alt="地図">
-            </div>
-
-            <table class="topic__table">
-              <tr>
-                <th>名称</th>
-                <td>うえの桜まつり</td>
-              </tr>
-              <tr>
-                <th>開催期間</th>
-                <td>2021年3月19日～4月11日<br/>5:00～23:00</td>
-              </tr>
-              <tr>
-                <th>開催場所</th>
-                <td>東京都　上野恩賜公園</td>
-              </tr>
-              <tr>
-                <th>交通アクセス</th>
-                <td>JR「上野駅」公園口直結</td>
-              </tr>
-              <tr>
-                <th>地図</th>
-                <td  style="padding:0;">
-                  <div class="topic__item-map">
-                    <img src="http://153.126.204.74/portfolio/wp-content/themes/sakura/img/map.png" alt="イメージ画像">
-                  </div>
-                </td>
-              </tr>
-            </table>
+          <?php
+            $args  = array(
+                'post_type' => 'topic',
+                'posts_per_page' => 1,
+            );
+            $the_query = new WP_Query( $args );
+            if ( $the_query->have_posts() ) :
+                while ( $the_query->have_posts() ) : $the_query->the_post();?>
+                <table class="topic__table">
+                <tr>
+                    <th>案内</th>
+                    <td  style="padding:0;">
+                      <div class="topic__item-img">
+                        <?php $image = get_field('topic_image'); ?>
+                        <img src="<?=$image['url']; ?>" alt="<?= $image['alt']; ?>" />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>名称</th>
+                    <td><?=esc_html(get_field('topic_name'));?></td>
+                  </tr>
+                  <tr>
+                    <th>開催期間</th>
+                    <td><?=esc_html(get_field('topic_date'));?><br/><?=esc_html(get_field('topic_time'));?></td>
+                  </tr>
+                  <tr>
+                    <th>開催場所</th>
+                    <td><?=esc_html(get_field('topic_area'));?></td>
+                  </tr>
+                  <tr>
+                    <th>交通アクセス</th>
+                    <td><?=esc_html(get_field('topic_access'));?></td>
+                  </tr>
+                  <tr>
+                    <th>地図</th>
+                    <td  style="padding:0;">
+                      <div class="topic__item-map">
+                        <?php $image = get_field('topic_map'); ?>
+                        <img src="<?=$image['url']; ?>" alt="<?= $image['alt']; ?>" />
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+            <?php endwhile;
+            endif; ?>
             </div><!-- .topic__item -->
           </div><!--.topic_wrap-->
       </div><!--.inner-->
