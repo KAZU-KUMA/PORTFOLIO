@@ -78,6 +78,11 @@ jQuery(function(){
         opacity: 0,
         interval: 100,
     });
+    ScrollReveal().reveal(".about__item-img", {
+        duration: 1500,
+        rotate: { x: 0, y: 180, z: 0 },
+        easing:  'ease-in-out',
+    });
 }); 
 
 /*文字の流れ*/
@@ -157,7 +162,93 @@ jQuery(function(){
     });
 });
 
-/*particles(花びら)*/ 
+jQuery(function() {
+    jQuery.validator.addMethod("space",
+    function(value, element) {
+      return this.optional(element) || value.trim().length > 0;
+    },
+    "必須入力です。"
+    );
+    
+    var options = {
+        //ルール設定
+        rules: {
+            username: {
+                required: true,
+                space: true,
+                maxlength: 20
+            },
+            email: {
+                required: true,
+                space: true,
+                email: true
+            },
+            message: {
+                required: true,
+                space: true,
+                maxlength: 100
+            },
+        },
+        //エラーメッセージ設定
+        messages: {
+            username: {
+                required: "お名前を入力してください。",
+                maxlength: "お名前は20文字以内で入力してください。"
+            },
+            email: {
+                required: "メールアドレスを入力してください。",
+                email: "正しいメールアドレスを入力してください。"
+            },
+            message: {
+                required: "メッセージを入力してください。",
+                maxlength: "100文字以内で入力してください。"
+            },
+        },
+        //エラーメッセージ表示位置
+        errorPlacement: function(error, element) {
+            error.insertAfter(element);
+        }
+    }
+    // 処理を実行
+    jQuery("#form").validate(options);
+});
+
+jQuery(function(){
+    // 送信ボタンクリック時処理
+    jQuery( '#form' ).submit( function(event){
+        //フォーム既定の動作をキャンセル
+        event.preventDefault();
+        //エラー時は処理
+        jQuery("#result").html("");
+        if (jQuery("#form").valid() == false) {
+            return false;
+        };
+        //フォームの入力値を変数に格納
+        var data = new FormData( this );
+ 
+        //送信するデータを指定
+        data.append('action'  , 'ajaxtest' );
+ 
+        //フォームの入力内容をajaxにより送信
+        $.ajax({
+            type: 'POST',//POST送信
+            url: ajaxurl,//送信先のURL(function.php)
+            data: data,//送信するデータを指定
+            processData: false,//付与したデータをクエリ文字列に変換するかどうかの設定
+            contentType: false,//データの形式を指定するもの
+            success: function( response ){
+                jQuery("#result").html(response);
+                jQuery('form')[0].reset();
+            },
+            error: function( response ){
+                jQuery("#result").html( "error" );
+            }
+        });
+        return false;
+    });
+});
+
+/*particles(花吹雪)*/ 
 jQuery(function(){
     particlesJS("wrapper", {
         "particles":{
@@ -235,11 +326,3 @@ jQuery(function(){
         "retina_detect":false
     });
 });
-
-/*スペース除去*/ 
-jQuery(function(){
-    jQuery("#submit").click(function(){
-        input.trim();
-    });
-});
-

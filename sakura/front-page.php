@@ -4,7 +4,7 @@
         <div class="mv__img"></div>
 
         <div class="mv__item inner">
-          <h2 class="mv__item-title" style="white-space: nowrap;">日本の春の象徴「桜」</h2>
+          <h2 class="mv__item-title">日本の春の象徴「桜」</h2>
           <p class="mv__item-desc">
             春の代表的な花といえば桜ですよね。<br />
             桜を見て春の訪れを感じる方はたくさんいると思います。<br />
@@ -47,6 +47,50 @@
           </div><!--.news_wrap-->
         </div><!--.inner-->
       </section><!--.news-->
+
+
+      <section class="topic" id="topic">
+
+      <div class="inner">
+        <h3 class="topic__title ttl">TOPIC</h3>
+
+        <div class="topic__wrap">
+          <div class="topic__item">
+
+            <div class="topic__item-img">
+                <img src="http://153.126.204.74/portfolio/wp-content/themes/sakura/img/topic_img.png" alt="地図">
+            </div>
+
+            <table class="topic__table">
+              <tr>
+                <th>名称</th>
+                <td>うえの桜まつり</td>
+              </tr>
+              <tr>
+                <th>開催期間</th>
+                <td>2021年3月19日～4月11日<br/>5:00～23:00</td>
+              </tr>
+              <tr>
+                <th>開催場所</th>
+                <td>東京都　上野恩賜公園</td>
+              </tr>
+              <tr>
+                <th>交通アクセス</th>
+                <td>JR「上野駅」公園口直結</td>
+              </tr>
+              <tr>
+                <th>地図</th>
+                <td  style="padding:0;">
+                  <div class="topic__item-map">
+                    <img src="http://153.126.204.74/portfolio/wp-content/themes/sakura/img/map.png" alt="イメージ画像">
+                  </div>
+                </td>
+              </tr>
+            </table>
+            </div><!-- .topic__item -->
+          </div><!--.topic_wrap-->
+      </div><!--.inner-->
+      </section><!--.topic-->
 
 
       <section class="about" id="about">
@@ -139,12 +183,28 @@
         <div class="inner">
           <h3 class="contact__title ttl">CONTACT</h3>
           <div class="contact__wrap">
-              <?php echo do_shortcode( '[contact-form-7 id="135" title="コンタクトフォーム"]' ); ?>
-          </div>
-          <!--.contact__wrap-->
-        </div>
-        <!--.inner-->
-      </section>
-      <!--.contact-->
+            <?php //echo do_shortcode( '[contact-form-7 id="135" title="コンタクトフォーム"]' ); ?>
+            
+            <form id="form">
+                <div class="contact__item">
+                  <label for="name">お名前<span class="required">必須</span></label>
+                  <input type="text" id="name" name="username" />
+                </div>
+                <div class="contact__item">
+                  <label for="email">メールアドレス<span class="required">必須</span></label>
+                  <input type="text" id="email" name="email" />
+                </div>
+                <div class="contact__item">
+                  <label for="message">メッセージ<span class="required">必須</span></label>
+                  <textarea id="message" name="message" placeholder="お問い合わせ内容など、ご自由にお書き下さい。"></textarea>
+                </div>
+              
+                <input type="submit" class="submit"  value="送信" /> 
+            </form>
+ 
+            <div id="result"></div>
+          </div><!--.contact__wrap-->
+        </div><!--.inner-->
+      </section><!--.contact-->
     </main>
 <?php get_footer(); ?>
