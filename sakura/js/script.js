@@ -21,7 +21,7 @@ jQuery(function(){
 
 /*ページ内スクロール*/
 jQuery(function () {
-  jQuery('.header__nav a[href^="#"]').click(function(){
+  jQuery('#hm-nav a[href^="#"]').click(function(){
 	//リンク先の位置取得(idの値を取得)
     var target = jQuery(this).attr("href");
     var position = jQuery(target).offset().top;
@@ -35,7 +35,7 @@ jQuery(function () {
 /*ハンバーガーメニュー*/
 jQuery(function(){
 	// ボタン切り替え
-	jQuery(".header__nav-sp").click(function(){
+	jQuery("#hm-btn").click(function(){
 		jQuery("html").toggleClass('open');
 	});
 	// メニュークリックで非表示
@@ -46,7 +46,7 @@ jQuery(function(){
 
 /*slick(スライド)*/
 jQuery(function() {
-    jQuery('.slider').slick({
+    jQuery('#slider').slick({
 	arrows: false, 
 	autoplay: true,
 	autoplaySpeed: 3000,
@@ -63,8 +63,8 @@ jQuery(function() {
     }]
   });
 // スマホ対策(タッチ操作イベント)
-  jQuery('.slider').on('touchmove', function(event, slick, currentSlide, nextSlide){
-    jQuery('.slider').slick('slickPlay');
+  jQuery('#slider').on('touchmove', function(event, slick, currentSlide, nextSlide){
+    jQuery('#slider').slick('slickPlay');
   });
 });
 
@@ -78,17 +78,20 @@ jQuery(function(){
         opacity: 0,
         interval: 100,
     });
-    ScrollReveal().reveal(".about__item-img", {
-        duration: 1500,
-        rotate: { x: 0, y: 180, z: 0 },
-        easing:  'ease-in-out',
-    });
+    if (jQuery(window).width() < 1366) {
+        ScrollReveal().reveal(".about__item-img", {
+            duration: 1500,
+            rotate: { x: 0, y: 180, z: 0 },
+            easing:  'ease-in-out',
+            viewFactor: 2,
+        });
+    }
 }); 
 
 /*文字の流れ*/
 jQuery(function(){
     setTimeout(function(){
-    jQuery('.mv__item-desc').textAnimation({
+    jQuery('#ta').textAnimation({
         speed: 500,
         delay: 100,
     });
@@ -115,16 +118,46 @@ jQuery(function() {
 /*パララックス*/ 
 jQuery(function() {
     if (jQuery(window).width() > 1366) {
-    // スクロール値
-    jQuery(window).scroll(function() {
-        var scroll = jQuery(window).scrollTop();
-　　// 拡大縮小スケール
-    jQuery('.mv__img').css({
-    transform: 'scale('+(100 + scroll/10)/100+')',
+        // スクロール値
+        jQuery(window).scroll(function() {
+            var scroll = jQuery(window).scrollTop();
+        　　// 拡大縮小スケール、ぼかし
+            jQuery('#pp-scale').css({
+            transform: 'scale('+(100 + scroll/10)/100+')',
+            filter: 'blur('+(scroll/100)+'px)',
+            });
         });
-    });
-  }
+    }
 });
+
+jQuery(function() {
+    if (jQuery(window).width() > 1366) {
+        var pp = document.getElementsByClassName('about__item')[1];
+        new simpleParallax(pp, {
+            orientation: 'right',
+            overflow: true,
+            scale: 5,
+        });
+        var pp2 = document.getElementsByClassName('about__item')[3];
+        new simpleParallax(pp2, {
+            orientation: 'right',
+            overflow: true,
+            scale: 5,
+        });  
+        var pp3 = document.getElementsByClassName('about__item')[2];
+        new simpleParallax(pp3, {
+            orientation: 'left',
+            overflow: true,
+            scale: 5,
+        }); 
+        var pp4 = document.getElementsByClassName('about__item')[4];
+        new simpleParallax(pp4, {
+            orientation: 'left',
+            overflow: true,
+            scale: 5,
+        });   
+    }
+})
 
 /*progressbar(ローディング)*/
 jQuery(function(){
@@ -327,26 +360,78 @@ jQuery(function(){
     });
 });
 
-/*ダークモード*/
+/*スイッチ(ダークモード)*/
+jQuery(function(){
+    var mySwitch = document.getElementById("myonoffswitch");
+    // ダークモードがONのときに実行する処理
+    function darkModeOn(){
+        jQuery("html").addClass( "dark" );
+        mySwitch.checked = true;
+    }
+    // ダークモードがOFFのときに実行する処理
+    function darkModeOff(){
+        jQuery("html").removeClass( "dark" );
+        mySwitch.checked = false;
+    }
+    // スイッチの操作に応じて切り替え 
+    mySwitch.addEventListener("change", function(){
+        if(mySwitch.checked){
+            darkModeOn();
+        }else{
+            darkModeOff();
+        }
+    })
+    // 時間に応じて切り替え
+    var date = new Date();
+    var time = date.getHours();
+    if(20 <= time ||  time <= 7){
+        darkModeOn(); 
+    }else{
+        darkModeOff();
+
+    }
+});
+
+/*プライバシーポリシー*/
+jQuery(function() {
+    jQuery('#service_link').click(function(){
+        jQuery('#service').fadeToggle();
+    });
+    jQuery('#policy_link').click(function(){
+        jQuery('#policy').fadeToggle();
+    });
+}); 
+
+jQuery(function(){
+    jQuery(window).scroll(function(){
+    var yLine = $(this).scrollTop();
+    jQuery('#bg1').css('background-position', 'left top ' +parseInt( -yLine / 100 ) +'px');
+    jQuery('#bg2').css('background-position', 'left top ' +parseInt( -yLine / 10 ) +'px');
+    jQuery('#bg3').css('background-position', 'left top ' +parseInt( -yLine / 2 ) +'px');
+    });
+});
+
 // jQuery(function(){
-//     var date = new Date();
-//     var time = date.getHours();
-//     if(20 <= time){
-//         jQuery("html").addClass( "dark" );
-//     }else{
-//         jQuery("html").removeClass( "dark" );
-//     }
+//     $(".twentytwenty").twentytwenty();
+//   });
+/*マウスストーカー*/
+// jQuery(function(){
+// 	jQuery(document).on("mousemove",function(e){
+// 		jQuery("#cursor").css({transform: 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)'});
+//         jQuery("#follower").css({transform: 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)'});
+// 	});
+//     jQuery("a, button, input,.btn, .header__nav-sp").hover(function() {
+//         jQuery("#follower").addClass("active");
+//     }, function() {
+//         jQuery("#follower").removeClass("active");
+//     });   
+// }); 
+
+// $(function() {
+//     $(window).scroll(function() {
+//       var scroll = $(this).scrollTop();
+//       console.log(scroll);
+//     });
 // });
 
-/*マウスストーカー*/
-jQuery(function(){
-	jQuery(document).on("mousemove",function(e){
-		jQuery("#cursor").css({transform: 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)'});
-        jQuery("#follower").css({transform: 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)'});
-	});
-    jQuery("a, button, input,.btn, .header__nav-sp").hover(function() {
-        jQuery("#follower").addClass("active");
-    }, function() {
-        jQuery("#follower").removeClass("active");
-    });   
-}); 
+

@@ -17,6 +17,8 @@ function my_scripts() {
     wp_deregister_script('jquery');     
     // JQuery
     wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js' );
+    // particles
+    wp_enqueue_script( 'particles-script', get_template_directory_uri() . '/js/particles.min.js', array(), '1.0', true );
     // slick
     wp_enqueue_script( 'slide-script', get_template_directory_uri() . '/js/slick.min.js', array(), '1.0', true );
     // scrollreveal
@@ -27,8 +29,8 @@ function my_scripts() {
     wp_enqueue_script( 'sprogressbar-script', get_template_directory_uri() . '/js/progressbar.min.js', array(), '1.0', true );
     // textanimation
     wp_enqueue_script( 'textanime-script', get_template_directory_uri() . '/js/textAnimation.min.js', array(), '1.0', true );
-    // particles
-    wp_enqueue_script( 'particles-script', get_template_directory_uri() . '/js/particles.min.js', array(), '1.0', true );
+    // parallax
+    wp_enqueue_script( 'parallax-script', get_template_directory_uri() . '/js/simpleParallax.min.js', array(), '1.0', true );
     // JSファイル
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array(), '1.0', true );
 }

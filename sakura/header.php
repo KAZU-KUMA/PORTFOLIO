@@ -37,7 +37,7 @@
           <a href="/portfolio/">SAKURA</a>
         </h1>
 
-        <nav class="header__nav">
+        <nav class="header__nav" id="hm-nav">
           <ul class="menu">
             <li class="menu__list"><a href="#news">NEWS</a></li>
             <li class="menu__list"><a href="#about">ABOUT</a></li>
@@ -46,7 +46,7 @@
             <li class="menu__list"><a href="#contact">CONTACT</a></li>
           </ul>
         </nav>
-        <div class="header__nav-sp">
+        <div class="header__nav-sp" id="hm-btn">
           <div class="header__nav-sp-line"></div>
         </div>
       </div>
