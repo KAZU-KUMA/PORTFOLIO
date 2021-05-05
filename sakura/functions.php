@@ -31,6 +31,8 @@ function my_scripts() {
     wp_enqueue_script( 'textanime-script', get_template_directory_uri() . '/js/textAnimation.min.js', array(), '1.0', true );
     // parallax
     wp_enqueue_script( 'parallax-script', get_template_directory_uri() . '/js/simpleParallax.min.js', array(), '1.0', true );
+    // skrollr
+    wp_enqueue_script( 'skrollr-script', get_template_directory_uri() . '/js/skrollr.min.js', array(), '1.0', true );
     // JSファイル
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array(), '1.0', true );
 }
@@ -94,5 +96,5 @@ mb_send_mail($from, "お問い合わせ：".$name, $messageAdmin, "From:SAKURA<q
 }    
 die();
 }
-add_action( 'wp_ajax_ajaxtest', 'ajaxFunc' );
-add_action( 'wp_ajax_nopriv_ajaxtest', 'ajaxFunc' );
+add_action( 'wp_ajax_ajaxform', 'ajaxFunc' );
+add_action( 'wp_ajax_nopriv_ajaxform', 'ajaxFunc' );

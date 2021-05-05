@@ -1,6 +1,42 @@
 // JavaScript Document
 'use strict';
 
+/*progressbar(ローディング)*/
+jQuery(function(){
+    var bar = new ProgressBar.Line(loading__text, {
+        easing: 'easeInOut',
+        duration: 1500,
+        // 進捗ゲージ
+        strokeWidth: 0.2,
+        color: '#ee6e9f',
+        // ゲージベース
+        trailWidth: 0.2,
+        trailColor: '#fff',
+        // テキスト指定	
+        text: {		
+            style: {
+                position: 'absolute',
+                left: '50%',
+                top: '50%',
+                padding: '0',
+                margin: '-30px 0 0 0',
+                transform:'translate(-50%,-50%)',
+                'font-size':'1.5rem',
+                color: '#ee6e9f',
+            },
+            // 自動付与スタイル
+            autoStyleContainer: false 
+        },
+        step: function(state, bar) {
+            bar.setText(Math.round(bar.value() * 100) + ' %');
+        }
+    });
+    // ローディング画面非表示 
+    bar.animate(1.0, function () {
+        jQuery("#loading").delay(250).fadeOut(500);
+    });
+});
+
 /*ページ上部スクロール*/
 jQuery(function(){
     // ボタン表示/非表示
@@ -88,8 +124,9 @@ jQuery(function(){
     }
 }); 
 
-/*文字の流れ*/
+/*文字アニメーション*/
 jQuery(function(){
+    // 遅延処理
     setTimeout(function(){
     jQuery('#ta').textAnimation({
         speed: 500,
@@ -98,7 +135,7 @@ jQuery(function(){
 },1000);
 });
 
-/*もっと見るボタン*/
+/*もっと見る*/
 jQuery(function() {
     var show = 18; //最初に表示する件数
     var num = 6;  //clickごとに表示したい件数
@@ -115,9 +152,9 @@ jQuery(function() {
     });
 });
 
-/*パララックス*/ 
+/*パララックス[mv]*/ 
 jQuery(function() {
-    if (jQuery(window).width() > 1366) {
+    if (!navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
         // スクロール値
         jQuery(window).scroll(function() {
             var scroll = jQuery(window).scrollTop();
@@ -129,72 +166,53 @@ jQuery(function() {
         });
     }
 });
-
+/*simpleParallax(パララックス)[about]*/
+// 横スライド
 jQuery(function() {
-    if (jQuery(window).width() > 1366) {
+    if (!navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
         var pp = document.getElementsByClassName('about__item')[1];
         new simpleParallax(pp, {
             orientation: 'right',
             overflow: true,
             scale: 5,
         });
-        var pp2 = document.getElementsByClassName('about__item')[3];
+        var pp2 = document.getElementsByClassName('about__item')[2];
         new simpleParallax(pp2, {
-            orientation: 'right',
-            overflow: true,
-            scale: 5,
-        });  
-        var pp3 = document.getElementsByClassName('about__item')[2];
-        new simpleParallax(pp3, {
             orientation: 'left',
             overflow: true,
             scale: 5,
         }); 
+        var pp3 = document.getElementsByClassName('about__item')[3];
+        new simpleParallax(pp3, {
+            orientation: 'right',
+            overflow: true,
+            scale: 5,
+        });  
         var pp4 = document.getElementsByClassName('about__item')[4];
         new simpleParallax(pp4, {
             orientation: 'left',
             overflow: true,
             scale: 5,
-        });   
+        });  
     }
-})
-
-/*progressbar(ローディング)*/
+});
+// スクロール視差
 jQuery(function(){
-    var bar = new ProgressBar.Line(loading__text, {
-        easing: 'easeInOut',
-        duration: 1500,
-        // 進捗ゲージ
-        strokeWidth: 0.2,
-        color: '#ee6e9f',
-        // ゲージベース
-        trailWidth: 0.2,
-        trailColor: '#fff',
-        // テキスト指定	
-        text: {		
-            style: {
-                position: 'absolute',
-                left: '50%',
-                top: '50%',
-                padding: '0',
-                margin: '-30px 0 0 0',
-                transform:'translate(-50%,-50%)',
-                'font-size':'1.5rem',
-                color: '#ee6e9f',
-            },
-            // 自動付与スタイル
-            autoStyleContainer: false 
-        },
-        step: function(state, bar) {
-            bar.setText(Math.round(bar.value() * 100) + ' %');
-        }
-    });
-    // ローディング画面非表示 
-    bar.animate(1.0, function () {
-        jQuery("#loading").delay(250).fadeOut(500);
+    jQuery(window).scroll(function(){
+    // スクロール量取得
+    var yLine = $(this).scrollTop();
+    // スクロール量指定
+    jQuery('#about__bg-s').css('background-position', 'left top ' +parseInt( -yLine / 100 ) +'px');
+    jQuery('#about__bg-m').css('background-position', 'left top ' +parseInt( -yLine / 10 ) +'px');
+    jQuery('#about__bg-l').css('background-position', 'left top ' +parseInt( -yLine / 2 ) +'px');
     });
 });
-
+// before_after
+if (!navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+    skrollr.init();
+}
+/*validate(バリテーション)*/ 
+// エラー処理
 jQuery(function() {
     jQuery.validator.addMethod("space",
     function(value, element) {
@@ -246,6 +264,7 @@ jQuery(function() {
     jQuery("#form").validate(options);
 });
 
+// 送信処理
 jQuery(function(){
     // 送信ボタンクリック時処理
     jQuery( '#form' ).submit( function(event){
@@ -260,7 +279,7 @@ jQuery(function(){
         var data = new FormData( this );
  
         //送信するデータを指定
-        data.append('action'  , 'ajaxtest' );
+        data.append('action'  , 'ajaxform' );
  
         //フォームの入力内容をajaxにより送信
         $.ajax({
@@ -362,7 +381,7 @@ jQuery(function(){
 
 /*スイッチ(ダークモード)*/
 jQuery(function(){
-    var mySwitch = document.getElementById("myonoffswitch");
+    var mySwitch = document.getElementById("onoffswitch");
     // ダークモードがONのときに実行する処理
     function darkModeOn(){
         jQuery("html").addClass( "dark" );
@@ -392,7 +411,7 @@ jQuery(function(){
     }
 });
 
-/*プライバシーポリシー*/
+/*プライバシーポリシー表示/非表示*/
 jQuery(function() {
     jQuery('#service_link').click(function(){
         jQuery('#service').fadeToggle();
@@ -402,36 +421,26 @@ jQuery(function() {
     });
 }); 
 
-jQuery(function(){
-    jQuery(window).scroll(function(){
-    var yLine = $(this).scrollTop();
-    jQuery('#bg1').css('background-position', 'left top ' +parseInt( -yLine / 100 ) +'px');
-    jQuery('#bg2').css('background-position', 'left top ' +parseInt( -yLine / 10 ) +'px');
-    jQuery('#bg3').css('background-position', 'left top ' +parseInt( -yLine / 2 ) +'px');
-    });
-});
-
-// jQuery(function(){
-//     $(".twentytwenty").twentytwenty();
-//   });
 /*マウスストーカー*/
 // jQuery(function(){
 // 	jQuery(document).on("mousemove",function(e){
 // 		jQuery("#cursor").css({transform: 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)'});
 //         jQuery("#follower").css({transform: 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)'});
 // 	});
-//     jQuery("a, button, input,.btn, .header__nav-sp").hover(function() {
+//     jQuery("a, button, input,.btn, #hm").hover(function() {
 //         jQuery("#follower").addClass("active");
 //     }, function() {
 //         jQuery("#follower").removeClass("active");
 //     });   
 // }); 
 
+/*スクロール量*/ 
 // $(function() {
 //     $(window).scroll(function() {
 //       var scroll = $(this).scrollTop();
 //       console.log(scroll);
 //     });
 // });
+
 
 

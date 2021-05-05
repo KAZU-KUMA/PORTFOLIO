@@ -72,7 +72,7 @@ li {
   letter-spacing: 0.2em;
   line-height: 1;
   font-weight: bold;
-  color: #ee6e9f;
+  color: #e268bd;
   text-align: center;
   padding-bottom: 20px;
 }
@@ -92,8 +92,8 @@ button,
   margin: 0 auto;
   text-align: center;
   color: #fff;
-  background: #ee6e9f;
-  border: 1px solid #ee6e9f;
+  background: #e268bd;
+  border: 1px solid #e268bd;
   font-size: 14px;
   letter-spacing: 0.2em;
   border-radius: 5px;
@@ -128,8 +128,8 @@ button:hover,
 *******************************/
 .header {
   width: 100%;
-  background: #fdd8d8;
-  box-shadow: 0 10px 10px #fdd8d8;
+  background: #e9c2bd;
+  box-shadow: 0 10px 10px #e9c2bd;
 }
 
 .header .inner {
@@ -170,12 +170,12 @@ button:hover,
 }
 
 .header .menu__list a:hover {
-  color: #ee6e9f;
+  color: #e268bd;
 }
 
 .header__logo a {
   font-size: 32px;
-  color: #ee6e9f;
+  color: #e268bd;
   letter-spacing: 0.2em;
   line-height: 1;
   text-shadow: 2px 2px 1px #ffffff, -2px 2px 1px #ffffff, 2px -2px 1px #ffffff, -2px -2px 1px #ffffff, 2px 0px 1px #ffffff, 0px 2px 1px #ffffff, -2px 0px 1px #ffffff, 0px -2px 1px #ffffff;
@@ -201,7 +201,7 @@ button:hover,
   position: relative;
   width: 30px;
   height: 2px;
-  color: #ee6e9f;
+  color: #e268bd;
   background: currentColor;
 }
 
@@ -233,12 +233,12 @@ button:hover,
 }
 
 .open .header__nav-sp-line:before {
-  background: #ee6e9f;
+  background: #e268bd;
   transform: translateY(-8px) rotate(45deg);
 }
 
 .open .header__nav-sp-line:after {
-  background: #ee6e9f;
+  background: #e268bd;
   transform: translateY(8px) rotate(-45deg);
 }
 
@@ -312,7 +312,7 @@ button:hover,
 }
 
 .mv__item-title {
-  color: #ee6e9f;
+  color: #e268bd;
   font-size: 24px;
   letter-spacing: 0.2em;
   line-height: 1;
@@ -370,19 +370,10 @@ button:hover,
  *******************************/
 .news {
   position: relative;
-  background: #c1ff95;
+  background: #9ed1a6;
 }
 
 .news .inner {
-  padding-top: 25px;
-}
-
-.topic {
-  position: relative;
-  background: #c1ff95;
-}
-
-.topic .inner {
   padding-top: 25px;
 }
 
@@ -426,6 +417,15 @@ button:hover,
     font-size: 16px;
     line-height: 1.5;
   }
+}
+
+.topic {
+  position: relative;
+  background: #9ed1a6;
+}
+
+.topic .inner {
+  padding-top: 25px;
 }
 
 .topic__item {
@@ -499,11 +499,17 @@ table {
   margin-bottom: 25px;
   overflow: hidden;
   border-radius: 10px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  margin-bottom: 5px;
 }
 
 @media screen and (min-width: 1280px) {
   table {
     width: 640px;
+    font-size: 16px;
+    line-height: 1.5;
   }
 }
 
@@ -529,7 +535,7 @@ table td {
 }
 
 table th {
-  background: #ee6e9f;
+  background: #e268bd;
   color: #fff;
   vertical-align: top;
 }
@@ -582,22 +588,22 @@ table td {
 }
 
 .custom-shape-divider-bottom-1619256456 .shape-fill {
-  fill: #c1ff95;
+  fill: #9ed1a6;
 }
 
 /*******************************
     ABOUT
  *******************************/
 .about {
-  background: rgba(253, 216, 216, 0.7);
+  background: rgba(233, 194, 189, 0.7);
 }
 
 .about .inner {
-  background: #fdd8d8;
+  background: #e9c2bd;
   padding-top: 25px;
 }
 
-.about .inner:after {
+.about .inner.border:after {
   border-top: 10px solid transparent;
   border-left: 50vw solid transparent;
   border-right: 50vw solid #ffe6a8;
@@ -607,7 +613,7 @@ table td {
 }
 
 @media screen and (min-width: 1280px) {
-  .about .inner:after {
+  .about .inner.border:after {
     border-top: 25px solid transparent;
     border-bottom: 25px solid #ffe6a8;
   }
@@ -671,7 +677,7 @@ table td {
 .about__item-texts-desc {
   font-size: 12px;
   letter-spacing: 0.2em;
-  line-height: 1.75;
+  line-height: 1.25;
 }
 
 @media screen and (min-width: 1280px) {
@@ -679,6 +685,105 @@ table td {
     font-size: 16px;
     line-height: 1.5;
   }
+}
+
+.about__message {
+  background: url(img/bg.jpg) center center/cover no-repeat;
+  height: 300px;
+  width: 100%;
+  line-height: 300px;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 1px #000000, -2px 2px 1px #000000, 2px -2px 1px #000000, -2px -2px 1px #000000, 2px 0px 1px #000000, 0px 2px 1px #000000, -2px 0px 1px #000000, 0px -2px 1px #000000;
+  text-align: center;
+}
+
+@media screen and (min-width: 1280px) {
+  .about__message {
+    font-size: 30px;
+  }
+}
+
+#about__bg {
+  width: 100%;
+}
+
+#about__bg-s {
+  background: url(img/s.png);
+  width: 100%;
+}
+
+#about__bg-m {
+  background: url(img/m.png);
+  width: 100%;
+}
+
+#about__bg-l {
+  background: url(img/l.png);
+}
+
+#skrollr {
+  display: none;
+  position: relative;
+  height: 1280px;
+}
+
+@media screen and (min-width: 1280px) {
+  #skrollr {
+    display: block;
+  }
+}
+
+#before {
+  z-index: 20;
+  background: url(img/before.png) no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  height: 1280px;
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#after {
+  height: 1280px;
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: url(img/after.png) no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+dl {
+  margin-bottom: 25px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  line-height: 1.25;
+}
+
+@media screen and (min-width: 1280px) {
+  dl {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+dl dt {
+  font-weight: 700;
+}
+
+dl dd {
+  margin-bottom: 10px;
 }
 
 /*******************************
@@ -695,15 +800,15 @@ table td {
 .spots .inner:after {
   border-top: 10px solid transparent;
   border-left: 50vw solid transparent;
-  border-right: 50vw solid #c9feff;
-  border-bottom: 10px solid #c9feff;
+  border-right: 50vw solid #a8d4db;
+  border-bottom: 10px solid #a8d4db;
   content: "";
 }
 
 @media screen and (min-width: 1280px) {
   .spots .inner:after {
     border-top: 25px solid transparent;
-    border-bottom: 25px solid #c9feff;
+    border-bottom: 25px solid #a8d4db;
   }
 }
 
@@ -754,7 +859,7 @@ table td {
 .spots__item-texts-desc {
   font-size: 12px;
   letter-spacing: 0.2em;
-  line-height: 1.75;
+  line-height: 1.25;
 }
 
 @media screen and (min-width: 1280px) {
@@ -772,7 +877,7 @@ table td {
     GALLERY
 *******************************/
 .gallery {
-  background: #c9feff;
+  background: #a8d4db;
 }
 
 .gallery .inner {
@@ -830,7 +935,7 @@ table td {
     CONTACT
 *******************************/
 .contact {
-  background: linear-gradient(#c9feff, #fdd8d8);
+  background: linear-gradient(#a8d4db, #e9c2bd);
 }
 
 .contact .inner {
@@ -896,7 +1001,7 @@ span.required {
   font-size: 12px;
   letter-spacing: 0.2em;
   line-height: 1.75;
-  color: #ee6e9f;
+  color: #e268bd;
   padding: 0 5px;
   margin: 0 5px;
 }
@@ -943,7 +1048,7 @@ span.required {
     PRIVACY_POLICY
  *******************************/
 .privacy {
-  background-color: #fdd8d8;
+  background-color: #e9c2bd;
   color: #444 !important;
 }
 
@@ -977,7 +1082,7 @@ span.required {
  *******************************/
 .footer {
   width: 100%;
-  background: #fdd8d8;
+  background: #e9c2bd;
 }
 
 .footer .inner {
@@ -1010,7 +1115,7 @@ span.required {
 }
 
 .footer .menu__list a:hover {
-  color: #ee6e9f;
+  color: #e268bd;
 }
 
 .footer__cr {
@@ -1060,7 +1165,7 @@ span.required {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #fdd8d8;
+  background: #e9c2bd;
   z-index: 999;
 }
 
@@ -1124,12 +1229,12 @@ span.required {
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label {
-  background-color: #ee6e9f;
+  background-color: #e268bd;
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label,
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
-  border-color: #ee6e9f;
+  border-color: #e268bd;
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
@@ -1138,6 +1243,7 @@ span.required {
 }
 
 /*マウスストーカー*/
+/*twentytwenty*/
 /*******************************
     DARKMODE
 *******************************/
@@ -1198,6 +1304,11 @@ span.required {
   }
 }
 
+.dark .about__message {
+  background: url(img/darkbg.jpg) center center/cover no-repeat;
+  color: #fff;
+}
+
 .dark .spots {
   background: #011945;
 }
@@ -1242,59 +1353,4 @@ span.required {
 
 .dark .mv__img::before {
   background-color: rgba(1, 25, 69, 0.5);
-}
-
-#bg1 {
-  background: url(img/s.png);
-  width: 100%;
-}
-
-#bg2 {
-  background: url(img/m.png);
-  width: 100%;
-}
-
-#bg3 {
-  background: url(img/l.png);
-  width: 100%;
-}
-
-#test {
-  background: url(img/bg.jpg) center center/cover no-repeat;
-  height: 300px;
-  width: 100%;
-  line-height: 300px;
-  font-size: 20px;
-  letter-spacing: 0.2em;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 1px #000000, -2px 2px 1px #000000, 2px -2px 1px #000000, -2px -2px 1px #000000, 2px 0px 1px #000000, 0px 2px 1px #000000, -2px 0px 1px #000000, 0px -2px 1px #000000;
-  text-align: center;
-}
-
-@media screen and (min-width: 1280px) {
-  #test {
-    font-size: 30px;
-  }
-}
-
-.dark #test {
-  background: url(img/darkbg.jpg) center center/cover no-repeat;
-  color: #fff;
-}
-
-.twentytwenty {
-  width: 90% !important;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 1280px) {
-  .twentytwenty {
-    width: 50% !important;
-  }
-}
-
-.twentytwenty-before,
-.twentytwenty-after {
-  border-radius: 10px;
 }

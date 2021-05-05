@@ -29,13 +29,13 @@ $breakpoints: (
 $white: #fff;
 $black: #444;
 $gray: #999;
-$accent: #ee6e9f;
+$accent: #e268bd;
 $primary: #fdd8d8;
 $secondary: #6d9d88;
 /* 背景色*/
-$red: #fdd8d8;
-$green: #c1ff95;
-$blue: #c9feff;
+$red: #e9c2bd;
+$green: #9ed1a6;
+$blue: #a8d4db;
 $yellow: #ffe6a8;
 
 // ダークモード
@@ -59,12 +59,6 @@ body {
 html.dark,
 .dark body {
   color: $white;
-}
-html {
-  // @media (prefers-color-scheme: dark) {
-  //   -webkit-filter: grayscale(100%);
-  //   filter: grayscale(100%);
-  // }
 }
 // フッター最下部固定
 body {
@@ -354,24 +348,6 @@ button,
     padding-top: 25px;
   }
 }
-.topic {
-  position: relative;
-  background: $green;
-  .inner {
-    padding-top: 25px;
-    // &:after {
-    //   border-top: 10px solid transparent;
-    //   border-left: 50vw solid transparent;
-    //   border-right: 50vw solid $red;
-    //   border-bottom: 10px solid $red;
-    //   content: "";
-    //   @include mq("pc") {
-    //     border-top: 25px solid transparent;
-    //     border-bottom: 25px solid $red;
-    //   }
-    // }
-  }
-}
 .news__wrap {
   background: $white;
   border-radius: 10px;
@@ -402,6 +378,25 @@ button,
       font-size: 16px;
       line-height: 1.5;
     }
+  }
+}
+
+.topic {
+  position: relative;
+  background: $green;
+  .inner {
+    padding-top: 25px;
+    // &:after {
+    //   border-top: 10px solid transparent;
+    //   border-left: 50vw solid transparent;
+    //   border-right: 50vw solid $red;
+    //   border-bottom: 10px solid $red;
+    //   content: "";
+    //   @include mq("pc") {
+    //     border-top: 25px solid transparent;
+    //     border-bottom: 25px solid $red;
+    //   }
+    // }
   }
 }
 .topic__item {
@@ -469,8 +464,14 @@ table {
   margin-bottom: 25px;
   overflow: hidden;
   border-radius: 10px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  margin-bottom: 5px;
   @include mq("pc") {
     width: 640px;
+    font-size: 16px;
+    line-height: 1.5;
   }
   tr {
     border-bottom: 1px solid $black;
@@ -531,11 +532,11 @@ table {
     ABOUT
  *******************************/
 .about {
-  background: rgba(253, 216, 216, 0.7);
+  background: rgba(233, 194, 189, 0.7);
   .inner {
     background: $red;
     padding-top: 25px;
-    &:after {
+    &.border:after {
       border-top: 10px solid transparent;
       border-left: 50vw solid transparent;
       border-right: 50vw solid $yellow;
@@ -590,12 +591,94 @@ table {
     &-desc {
       font-size: 12px;
       letter-spacing: 0.2em;
-      line-height: 1.75;
+      line-height: 1.25;
       @include mq("pc") {
         font-size: 16px;
         line-height: 1.5;
       }
     }
+  }
+}
+.about__message {
+  background: url(img/bg.jpg) center center / cover no-repeat;
+  height: 300px;
+  width: 100%;
+  line-height: 300px;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+  color: $white;
+  text-shadow: 2px 2px 1px #000000, -2px 2px 1px #000000, 2px -2px 1px #000000,
+    -2px -2px 1px #000000, 2px 0px 1px #000000, 0px 2px 1px #000000,
+    -2px 0px 1px #000000, 0px -2px 1px #000000;
+  text-align: center;
+  @include mq("pc") {
+    font-size: 30px;
+  }
+}
+#about__bg {
+  width: 100%;
+  &-s {
+    background: url(img/s.png);
+    width: 100%;
+  }
+  &-m {
+    background: url(img/m.png);
+    width: 100%;
+  }
+  &-l {
+    background: url(img/l.png);
+  }
+}
+#skrollr {
+  display: none;
+  position: relative;
+  height: 1280px;
+  @include mq("pc") {
+    display: block;
+  }
+}
+#before {
+  z-index: 20;
+  background: url(img/before.png) no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  height: 1280px;
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#after {
+  height: 1280px;
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: url(img/after.png) no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+dl {
+  margin-bottom: 25px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  line-height: 1.25;
+  @include mq("pc") {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  dt {
+    font-weight: $bold;
+  }
+  dd {
+    margin-bottom: 10px;
   }
 }
 
@@ -652,7 +735,7 @@ table {
     &-desc {
       font-size: 12px;
       letter-spacing: 0.2em;
-      line-height: 1.75;
+      line-height: 1.25;
       @include mq("pc") {
         font-size: 16px;
         line-height: 1.5;
@@ -1011,6 +1094,19 @@ span.required {
 //   }
 // }
 
+/*twentytwenty*/
+// #twentytwenty {
+//   width: 90% !important;
+//   margin: 0 auto;
+//   @include mq("pc") {
+//     width: 50% !important;
+//   }
+//   #twentytwenty-before,
+//   #twentytwenty-after {
+//     border-radius: 10px;
+//   }
+// }
+
 /*******************************
     DARKMODE
 *******************************/
@@ -1060,6 +1156,10 @@ span.required {
       }
     }
   }
+  .about__message {
+    background: url(img/darkbg.jpg) center center / cover no-repeat;
+    color: $white;
+  }
   .spots {
     background: $dark;
     .inner {
@@ -1100,53 +1200,4 @@ span.required {
       background-color: rgba(1, 25, 69, 0.5);
     }
   }
-}
-
-#bg1 {
-  background: url(img/s.png);
-  width: 100%;
-}
-#bg2 {
-  background: url(img/m.png);
-  width: 100%;
-}
-#bg3 {
-  background: url(img/l.png);
-  width: 100%;
-}
-
-#test {
-  background: url(img/bg.jpg) center center / cover no-repeat;
-  height: 300px;
-  width: 100%;
-  line-height: 300px;
-  font-size: 20px;
-  letter-spacing: 0.2em;
-  font-weight: bold;
-  color: $white;
-  text-shadow: 2px 2px 1px #000000, -2px 2px 1px #000000, 2px -2px 1px #000000,
-    -2px -2px 1px #000000, 2px 0px 1px #000000, 0px 2px 1px #000000,
-    -2px 0px 1px #000000, 0px -2px 1px #000000;
-  text-align: center;
-  @include mq("pc") {
-    font-size: 30px;
-  }
-}
-.dark {
-  #test {
-    background: url(img/darkbg.jpg) center center / cover no-repeat;
-    color: $white;
-  }
-}
-
-.twentytwenty {
-  width: 90% !important;
-  margin: 0 auto;
-  @include mq("pc") {
-    width: 50% !important;
-  }
-}
-.twentytwenty-before,
-.twentytwenty-after {
-  border-radius: 10px;
 }
