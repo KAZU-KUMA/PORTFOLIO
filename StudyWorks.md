@@ -4,7 +4,7 @@
 このサイトでは風景と共に楽しむ桜を紹介しています。  
 
 [URL]  
-成果物(WEB サイト)：https://kazuki-portfolio.work/portfolio/
+成果物(WEB サイト)：https://kazuki-portfolio.work/portfolio/  
 ソースコード(GitHub)：https://github.com/KAZU-KUMA/PORTFOLIO/tree/master/sakura
 
 [ログイン情報(Basic 認証)]  
