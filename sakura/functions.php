@@ -29,6 +29,8 @@ function my_scripts() {
     wp_enqueue_script( 'sprogressbar-script', get_template_directory_uri() . '/js/progressbar.min.js', array(), '1.0', true );
     // textanimation
     wp_enqueue_script( 'textanime-script', get_template_directory_uri() . '/js/textAnimation.min.js', array(), '1.0', true );
+    // arctext
+    wp_enqueue_script( 'arctext-script', get_template_directory_uri() . '/js/arctext.js', array(), '1.0', true );
     // parallax
     wp_enqueue_script( 'parallax-script', get_template_directory_uri() . '/js/simpleParallax.min.js', array(), '1.0', true );
     // skrollr
@@ -102,27 +104,19 @@ add_action( 'wp_ajax_nopriv_ajaxform', 'ajaxFunc' );
 
 /*セレクト*/ 
 function ajaxFunc2(){
-          $city = $_POST['area'];
-          $appid = "bb748b76386045067cb510f657fefe3f";
+            $city = $_POST['select'];
+            $appid = "bb748b76386045067cb510f657fefe3f";
             $url = "http://api.openweathermap.org/data/2.5/weather?q=" . $city . "&units=metric&APPID=" . $appid;
             $json = file_get_contents( $url );
             $json = mb_convert_encoding( $json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN' );
             $json_decode = json_decode( $json );
           //現在の天気
-        
           $weather = $json_decode->weather[0]->main;
-        
           //現在の天気アイコン
-         
-          $icon = "<img src='https://openweathermap.org/img/wn/" . $json_decode->weather[0]->icon . "@2x.png'>";
-        
+          $icon = "<img src='https://openweathermap.org/img/wn/" . $json_decode->weather[0]->icon . "@2x.png'>";   
           //現在の気温
-         
           $tmp = round($json_decode->main->temp)."℃";
-  
-          //エリア
-         
-          $area = $_POST["area"];
+
 echo <<<EOM
 <table border>
 <tr>

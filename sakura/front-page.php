@@ -4,7 +4,7 @@
         <div class="mv__img" id="pp-scale"></div>
 
         <div class="mv__item inner">
-          <h2 class="mv__item-title">日本の春の象徴</h2>
+          <h2 class="mv__item-title"  id="arctext">日本の春の象徴</h2>
           <p class="mv__item-desc" id="ta">
             春の代表的な花といえば桜ですよね。<br />
             桜を見て春の訪れを感じる方はたくさんいると思います。<br />
@@ -59,10 +59,10 @@
 
       <section class="weather" id="weather">
       <div class="inner">
-      <h3 class="weather__title ttl">WEATHER</h3>
+      <h3 class="weather__title ttl">WEATHER <br><span>&#9660;地域を選択して天気と気温を確認&#9660;</span></h3>
         <div class="weather__wrap">
             <form action="" method="POST" id="select">
-              <select name="area">
+              <select name="select">
                 <option value="" selected>都道府県</option>
                 <option value="Hokkaido">北海道</option>
                 <option value="Miyagi">宮城県</option>
@@ -75,8 +75,8 @@
               </select>
             </form>
         </div><!--.weather_wrap-->
-        <div id="tests">
-        <table class="def">
+        <div id="output">
+        <table class="init">
           <tr>
           <th>天気</th>
           <th>気温</th>
@@ -86,7 +86,7 @@
           <td>---</td>
           </tr>
         </table>
-        </div>
+        </div><!-- output -->
       </div><!--.inner-->
       </section><!--.weather-->
 
@@ -156,7 +156,7 @@
         <div id="about__bg-m">
           <div id="about__bg-l">
             <section class="about" id="about">
-               <div class="about__message">風景と共に桜を楽しむ</div>
+               <div class="about__message"><span id="wording">風景と共に桜を楽しむ</span></div>
               <div class="inner">
                 <h3 class="about__title ttl">ABOUT</h3>
 
@@ -197,8 +197,8 @@
               </div><!--.inner-->
 
               <div id="skrollr">
-                <div class="skrollr__img before" data-4220="opacity:1;" data-4500="opacity:0;"></div>
-                <div class="skrollr__img after" data-4500="tranform:traslateY(0%);" data-5820="tranform:traslateY(100%);"></div>
+                <div class="skrollr__img before" data-4450="opacity:1;" data-4730="opacity:0;"></div>
+                <div class="skrollr__img after" data-4730="tranform:traslateY(0%);" data-6100="tranform:traslateY(100%);"></div>
               </div><!-- skrollr -->
               <div id="twentytwenty">
                 <?php echo do_shortcode( '[twenty20 img1="188" img2="189" offset="0.5"]' ); ?>
