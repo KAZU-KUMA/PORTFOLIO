@@ -2,40 +2,49 @@
 'use strict';
 
 /*progressbar(ローディング)*/
-jQuery(function(){
-    var bar = new ProgressBar.Line(loading__text, {
-        easing: 'easeInOut',
-        duration: 1500,
-        // 進捗ゲージ
-        strokeWidth: 0.2,
-        color: '#ee6e9f',
-        // ゲージベース
-        trailWidth: 0.2,
-        trailColor: '#fff',
-        // テキスト指定	
-        text: {		
-            style: {
-                position: 'absolute',
-                left: '50%',
-                top: '50%',
-                padding: '0',
-                margin: '-30px 0 0 0',
-                transform:'translate(-50%,-50%)',
-                'font-size':'1.5rem',
-                color: '#ee6e9f',
-            },
-            // 自動付与スタイル
-            autoStyleContainer: false 
-        },
-        step: function(state, bar) {
-            bar.setText(Math.round(bar.value() * 100) + ' %');
-        }
-    });
-    // ローディング画面非表示 
-    bar.animate(1.0, function () {
-        jQuery("#loading").delay(250).fadeOut(500);
+jQuery(window).on('load', function(){
+    // ローディング非表示
+	jQuery('#loading').delay(250).fadeOut(500);
+    // テキストアニメーション
+    jQuery('#ta').textAnimation({
+        speed: 500,
+        delay: 100,
     });
 });
+// jQuery(function(){
+//     var bar = new ProgressBar.Line(loading__text, {
+//         easing: 'easeInOut',
+//         duration: 1500,
+//         // 進捗ゲージ
+//         strokeWidth: 0.2,
+//         color: '#ee6e9f',
+//         // ゲージベース
+//         trailWidth: 0.2,
+//         trailColor: '#fff',
+//         // テキスト指定	
+//         text: {		
+//             style: {
+//                 position: 'absolute',
+//                 left: '50%',
+//                 top: '50%',
+//                 padding: '0',
+//                 margin: '-30px 0 0 0',
+//                 transform:'translate(-50%,-50%)',
+//                 'font-size':'1.5rem',
+//                 color: '#ee6e9f',
+//             },
+//             // 自動付与スタイル
+//             autoStyleContainer: false 
+//         },
+//         step: function(state, bar) {
+//             bar.setText(Math.round(bar.value() * 100) + ' %');
+//         }
+//     });
+//     // ローディング画面非表示 
+//     bar.animate(1.0, function () {
+//         jQuery("#loading").delay(250).fadeOut(500);
+//     });
+// });
 
 /*ページ上部スクロール*/
 jQuery(function(){
@@ -119,21 +128,20 @@ jQuery(function(){
             duration: 1500,
             rotate: { x: 0, y: 180, z: 0 },
             easing:  'ease-in-out',
-            viewFactor: 2,
         });
     }
 }); 
 
 /*文字アニメーション*/
-jQuery(function(){
-    // 遅延処理
-    setTimeout(function(){
-    jQuery('#ta').textAnimation({
-        speed: 500,
-        delay: 100,
-    });
-},1000);
-});
+// jQuery(function(){
+//     // 遅延処理
+//     setTimeout(function(){
+//     jQuery('#ta').textAnimation({
+//         speed: 500,
+//         delay: 100,
+//     });
+// },1000);
+// });
 
 /*もっと見る*/
 jQuery(function() {
@@ -154,8 +162,8 @@ jQuery(function() {
 
 /*パララックス[mv]*/ 
 jQuery(function() {
-    if (!navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
-        // スクロール値
+    if (!navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)) {
+        // スクロール値取得
         jQuery(window).scroll(function() {
             var scroll = jQuery(window).scrollTop();
         　　// 拡大縮小スケール、ぼかし
@@ -163,13 +171,19 @@ jQuery(function() {
             transform: 'scale('+(100 + scroll/10)/100+')',
             filter: 'blur('+(scroll/100)+'px)',
             });
+            // スクロール量調整
+            jQuery('#about__bg-s').css('background-position', 'left top ' +parseInt( -scroll / 100 ) +'px');
+            jQuery('#about__bg-m').css('background-position', 'left top ' +parseInt( -scroll / 10 ) +'px');
+            jQuery('#about__bg-l').css('background-position', 'left top ' +parseInt( -scroll / 2 ) +'px');
         });
     }
 });
+
+
 /*simpleParallax(パララックス)[about]*/
 // 横スライド
 jQuery(function() {
-    if (!navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+    if (!navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)) {
         var pp = document.getElementsByClassName('about__item')[1];
         new simpleParallax(pp, {
             orientation: 'right',
@@ -196,19 +210,9 @@ jQuery(function() {
         });  
     }
 });
-// スクロール視差
-jQuery(function(){
-    jQuery(window).scroll(function(){
-    // スクロール量取得
-    var yLine = $(this).scrollTop();
-    // スクロール量指定
-    jQuery('#about__bg-s').css('background-position', 'left top ' +parseInt( -yLine / 100 ) +'px');
-    jQuery('#about__bg-m').css('background-position', 'left top ' +parseInt( -yLine / 10 ) +'px');
-    jQuery('#about__bg-l').css('background-position', 'left top ' +parseInt( -yLine / 2 ) +'px');
-    });
-});
+
 // before_after
-if (!navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+if (!navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)) {
     skrollr.init();
 }
 /*validate(バリテーション)*/ 
@@ -320,7 +324,7 @@ jQuery(function(){
                     "width":0,
                 },
                 "image":{
-                    "src":'http://153.126.204.74/portfolio/wp-content/themes/sakura/img/sakura.png',
+                    "src":'https://kazuki-portfolio.work/portfolio/wp-content/themes/sakura/img/sakura.png',
                     "width":120,
                     "height":120
                 }
@@ -419,7 +423,8 @@ jQuery(function() {
     jQuery('#policy_link').click(function(){
         jQuery('#policy').fadeToggle();
     });
-}); 
+});
+
 
 /*マウスストーカー*/
 // jQuery(function(){
@@ -442,5 +447,50 @@ jQuery(function() {
 //     });
 // });
 
+/*パララックス[スマホ対応]*/ 
+// var parallax = function(){
+//     $(window).on('load resize', function() {
+//       $(window).on('load scroll', function(){
+//         var $winTop = $(window).scrollTop();
+//         var $target = $('.skrollr__img');
+//         if (navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)) {
+//           $target.each(function(index){
+//             var $position = $winTop - $target.eq(index).offset().top;
+//             if($winTop > $target.eq(index).offset().top - 800) {
+//               $target.eq(index).css({
+//                 'background-position-y': $position * .3
+//               });
+//             }
+//           });
+//         }
+//       });
+//     });
+//   }();
 
-
+/*天気情報*/ 
+jQuery(function(){
+    jQuery('#select').change(function(e) {
+    jQuery('.def').css('display', 'none');
+      //フォーム既定の動作をキャンセル
+      e.preventDefault();
+        //フォームの入力値を変数に格納
+        var data = new FormData( this );
+        //送信するデータを指定
+        data.append('action'  , 'ajaxselect' );
+        //フォームの入力内容をajaxにより送信
+        $.ajax({
+            type: 'POST',//POST送信
+            url: ajaxurl,//送信先のURL(function.php)
+            data: data,//送信するデータを指定
+            processData: false,//付与したデータをクエリ文字列に変換するかどうかの設定
+            contentType: false,//データの形式を指定するもの
+            success: function( response ){
+                jQuery("#tests").html(response);
+            },
+            error: function( response ){
+                jQuery("#tests").html( "error" );
+            }
+        });
+        return false;
+    });
+});

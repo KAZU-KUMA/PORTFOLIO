@@ -24,7 +24,8 @@
   <body <?php body_class(); ?>>
     <?php if(is_front_page()){ ?>
         <div id="loading">
-          <div id="loading__text"></div>
+          <!-- <div id="loading__text"></div> -->
+          　<img src="<?= get_template_directory_uri(); ?>/img/loading.gif" />
         </div>
     <?php } ?>
 

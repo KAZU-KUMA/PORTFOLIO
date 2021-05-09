@@ -37,7 +37,7 @@ function my_scripts() {
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array(), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
-
+/*Ajax*/ 
 function add_my_ajaxurl() {
 ?>
     <script>
@@ -48,6 +48,7 @@ function add_my_ajaxurl() {
 }
 add_action( 'wp_head', 'add_my_ajaxurl', 1 );
 
+/*フォーム*/ 
 function ajaxFunc(){
     date_default_timezone_set('Asia/Tokyo');
     mb_language("Japanese");
@@ -98,3 +99,48 @@ die();
 }
 add_action( 'wp_ajax_ajaxform', 'ajaxFunc' );
 add_action( 'wp_ajax_nopriv_ajaxform', 'ajaxFunc' );
+
+/*セレクト*/ 
+function ajaxFunc2(){
+          $city = $_POST['area'];
+          $appid = "bb748b76386045067cb510f657fefe3f";
+            $url = "http://api.openweathermap.org/data/2.5/weather?q=" . $city . "&units=metric&APPID=" . $appid;
+            $json = file_get_contents( $url );
+            $json = mb_convert_encoding( $json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN' );
+            $json_decode = json_decode( $json );
+          //現在の天気
+        
+          $weather = $json_decode->weather[0]->main;
+        
+          //現在の天気アイコン
+         
+          $icon = "<img src='https://openweathermap.org/img/wn/" . $json_decode->weather[0]->icon . "@2x.png'>";
+        
+          //現在の気温
+         
+          $tmp = round($json_decode->main->temp)."℃";
+  
+          //エリア
+         
+          $area = $_POST["area"];
+echo <<<EOM
+<table border>
+<tr>
+<th>天気</th>
+<th>気温</th>
+</tr>
+<tr>
+<td>
+$icon<br>
+$weather
+</td>
+<td>
+$tmp
+</td>
+</tr>
+</table>
+EOM;
+            die();
+        }
+        add_action( 'wp_ajax_ajaxselect', 'ajaxFunc2' );
+        add_action( 'wp_ajax_nopriv_ajaxselect', 'ajaxFunc2' );

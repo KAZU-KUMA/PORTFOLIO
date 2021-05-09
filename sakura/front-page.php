@@ -21,7 +21,7 @@
     　</div>
 
 
-
+      <article id="info">
       <section class="news" id="news">
       <div class="custom-shape-divider-bottom-1619256456">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -54,6 +54,41 @@
           </div><!--.news_wrap-->
         </div><!--.inner-->
       </section><!--.news-->
+
+
+
+      <section class="weather" id="weather">
+      <div class="inner">
+      <h3 class="weather__title ttl">WEATHER</h3>
+        <div class="weather__wrap">
+            <form action="" method="POST" id="select">
+              <select name="area">
+                <option value="" selected>都道府県</option>
+                <option value="Hokkaido">北海道</option>
+                <option value="Miyagi">宮城県</option>
+                <option value="Niigata">新潟県</option>
+                <option value="Tokyo">東京都</option>
+                <option value="Aichi">愛知県</option>
+                <option value="Osaka">大阪府</option>
+                <option value="Fukuoka">福岡県</option>
+                <option value="Okinawa">沖縄県</option>
+              </select>
+            </form>
+        </div><!--.weather_wrap-->
+        <div id="tests">
+        <table class="def">
+          <tr>
+          <th>天気</th>
+          <th>気温</th>
+          </tr>
+          <tr>
+          <td>---</td>
+          <td>---</td>
+          </tr>
+        </table>
+        </div>
+      </div><!--.inner-->
+      </section><!--.weather-->
 
 
 
@@ -113,9 +148,10 @@
           </div><!--.topic_wrap-->
       </div><!--.inner-->
       </section><!--.topic-->
-
+      </article>
       
 
+    
       <div id="about__bg-s">
         <div id="about__bg-m">
           <div id="about__bg-l">
@@ -135,10 +171,6 @@
                         「さくら」の語源は、「咲く」に複数を意味する「ら」をつけて「さくら」と呼んだという説など諸説あります。</p>
                   </div><!--.about__item-texts-->
                 </div><!--.about__item-->
-
-                <div id="twentytwenty">
-                <?php //echo do_shortcode( '[twenty20 img1="188" img2="189" offset="0.5"]' ); ?>
-                </div><!-- TwentyTwenty-->
 
                   <?php
                   $args  = array(
@@ -165,9 +197,12 @@
               </div><!--.inner-->
 
               <div id="skrollr">
-                <div id="before" data-4220="opacity:1;" data-4500="opacity:0;"></div>
-                <div id="after" data-4500="tranform:traslateY(0%);" data-5820="tranform:traslateY(100%);"></div>
-              </div>
+                <div class="skrollr__img before" data-4220="opacity:1;" data-4500="opacity:0;"></div>
+                <div class="skrollr__img after" data-4500="tranform:traslateY(0%);" data-5820="tranform:traslateY(100%);"></div>
+              </div><!-- skrollr -->
+              <div id="twentytwenty">
+                <?php echo do_shortcode( '[twenty20 img1="188" img2="189" offset="0.5"]' ); ?>
+                </div><!-- TwentyTwenty-->
 
               <div class="inner border">
               <div class="about__wrap">
@@ -175,21 +210,21 @@
                   <div class="about__item-texts" style="padding-top:0;">
                     <div class="about__item-texts-title">日本三大桜</div>
                       <dl class="about__item-texts-desc">
-                        <dt>⓵三春滝桜</dt>
+                        <dt>&#9312;三春滝桜</dt>
                         <dd>三春滝桜があるのは、福島県田村郡三春町大字滝字桜久保。エドヒガン系の紅枝垂桜（ベニシダレザクラ）で、日本三大桜であるとともに、樹高12m、根回り11m、幹周り9.5m、枝張り東西22m・南北18mと、三大巨桜としても知られています。</dd>
-                        <dt>⓶山高神代桜</dt>
+                        <dt>&#9313;山高神代桜</dt>
                         <dd>背後に南アルプスを望む、山梨県北杜市武川町山高の実相寺境内にあるエドヒガンザクラ。樹齢1800年とも2000年ともいわれる老木で、樹高10.3ｍ、根元・幹周り11.8ｍの巨木。幹の上部は朽ちていますが根元近くから新しい枝を張り花を咲かせています。</dd>
-                        <dt>⓷根尾谷淡墨桜</dt>
+                        <dt>&#9314;根尾谷淡墨桜</dt>
                         <dd>岐阜県本巣市の淡墨公園にあるエドヒガンザクラで、高16.3m、幹囲目通り9.91m、枝張りは東西26.90m、南北20.20m。つぼみのときは薄いピンク色で、満開になると白色、散り際には淡い墨色を帯びるのが特徴で、名前の由来にもなっています。</dd>
                       </dl>
 
                       <div class="about__item-texts-title">日本三大夜桜</div>
                       <dl class="about__item-texts-desc">
-                        <dt>⓵弘前公園</dt>
+                        <dt>&#9312;弘前公園</dt>
                         <dd>弘前公園では桜の開花時期になると毎年弘前さくらまつりが開催されます。見どころは、桜のトンネルと夜桜。特にライトアップされた夜桜は幻想的で、弘前城と夜桜のコントラストも見事である。</dd>
-                        <dt>⓶上野恩賜公園</dt>
+                        <dt>&#9313;上野恩賜公園</dt>
                         <dd>上野公園を春色に染める桜は、約50品種、約1200本。「日本さくら名所100選」に指定されており、毎年「うえの桜まつり」も開催されます。約200万人もの花見客が訪れる、押しも押されもせぬ「桜の名所」となりました。</dd>
-                        <dt>⓷高田公園</dt>
+                        <dt>&#9314;高田公園</dt>
                         <dd>高田公園には約4000本の桜があり、毎年4月に開かれる「高田城百万人観桜会」では約3000個のぼんぼりに灯がともされ、県内外から多くの観光客が訪れる。</dd>
                       </dl>
                   </div><!--.about__item-texts-->

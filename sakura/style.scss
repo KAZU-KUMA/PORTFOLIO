@@ -126,7 +126,6 @@ button,
 }
 .marker {
   background-image: linear-gradient(transparent 50%, #ff6 50%);
-  padding-bottom: 0.25rem;
 }
 .dark .marker {
   background-image: linear-gradient(transparent 50%, #f66 50%);
@@ -176,6 +175,22 @@ button,
   }
 }
 .header__logo {
+  position: relative;
+  padding-left: 50px;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: url(img/sakura.png) no-repeat;
+    background-size: contain;
+    @include mq("pc") {
+      top: 10px;
+    }
+  }
   a {
     font-size: 32px;
     color: $accent;
@@ -337,13 +352,32 @@ button,
     }
   }
 }
-
 /*******************************
     NEWS TOPIC
  *******************************/
-.news {
+#info {
   position: relative;
   background: $green;
+  background-image: radial-gradient(
+      rgba(188, 213, 55, 0.2) 30%,
+      transparent 30%
+    ),
+    radial-gradient(rgba(116, 166, 76, 0.2) 20%, transparent 20%);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+  &:before {
+    display: block;
+    content: "";
+    position: absolute;
+    background: linear-gradient(to bottom, $green 5%, rgba(0, 0, 0, 0.01) 20%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+.news {
+  position: relative;
   .inner {
     padding-top: 25px;
   }
@@ -383,7 +417,6 @@ button,
 
 .topic {
   position: relative;
-  background: $green;
   .inner {
     padding-top: 25px;
     // &:after {
@@ -397,6 +430,60 @@ button,
     //     border-bottom: 25px solid $red;
     //   }
     // }
+  }
+  table {
+    box-sizing: border-box;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 25px;
+    // overflow: hidden;
+    // border-radius: 10px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    margin-bottom: 5px;
+    @include mq("pc") {
+      width: 640px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    table,
+    td,
+    th {
+      border: 1px solid $black;
+      border-collapse: collapse;
+    }
+    tr {
+      // border-bottom: 1px solid $black;
+      // &:last-child {
+      //   border-bottom: none;
+      // }
+    }
+    th,
+    td {
+      padding: 0.5em 1em;
+      display: block;
+      @include mq("pc") {
+        display: table-cell;
+      }
+    }
+    th {
+      background: $accent;
+      color: $white;
+      vertical-align: top;
+      @include mq("pc") {
+        width: 35%;
+      }
+    }
+    td {
+      background: $white;
+      color: $black;
+      @include mq("pc") {
+        width: 65%;
+      }
+    }
   }
 }
 .topic__item {
@@ -455,54 +542,7 @@ button,
     opacity: 1;
   }
 }
-table {
-  box-sizing: border-box;
-  border-collapse: collapse;
-  margin: 0 auto;
-  text-align: center;
-  width: 100%;
-  margin-bottom: 25px;
-  overflow: hidden;
-  border-radius: 10px;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  line-height: 1;
-  margin-bottom: 5px;
-  @include mq("pc") {
-    width: 640px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  tr {
-    border-bottom: 1px solid $black;
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-  th,
-  td {
-    padding: 0.5em 1em;
-    display: block;
-    @include mq("pc") {
-      display: table-cell;
-    }
-  }
-  th {
-    background: $accent;
-    color: $white;
-    vertical-align: top;
-    @include mq("pc") {
-      width: 35%;
-    }
-  }
-  td {
-    background: $white;
-    color: $black;
-    @include mq("pc") {
-      width: 65%;
-    }
-  }
-}
+
 .custom-shape-divider-bottom-1619256456 {
   position: absolute;
   top: -100px;
@@ -526,6 +566,10 @@ table {
   }
   .shape-fill {
     fill: $green;
+    background-image: radial-gradient(#bcd537 25%, transparent 25%),
+      radial-gradient(#74a64c 20%, transparent 20%);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
   }
 }
 /*******************************
@@ -536,16 +580,13 @@ table {
   .inner {
     background: $red;
     padding-top: 25px;
-    &.border:after {
-      border-top: 10px solid transparent;
-      border-left: 50vw solid transparent;
-      border-right: 50vw solid $yellow;
-      border-bottom: 10px solid $yellow;
-      content: "";
-      transform: scaleX(-1);
-      @include mq("pc") {
-        border-top: 25px solid transparent;
-        border-bottom: 25px solid $yellow;
+    &.border {
+      background: $red;
+      max-width: initial;
+      width: 100%;
+      .about__item {
+        max-width: 1280px;
+        margin: 0 auto;
       }
     }
   }
@@ -591,7 +632,7 @@ table {
     &-desc {
       font-size: 12px;
       letter-spacing: 0.2em;
-      line-height: 1.25;
+      line-height: 1.5;
       @include mq("pc") {
         font-size: 16px;
         line-height: 1.5;
@@ -620,51 +661,55 @@ table {
   width: 100%;
   &-s {
     background: url(img/s.png);
-    width: 100%;
   }
   &-m {
     background: url(img/m.png);
-    width: 100%;
   }
   &-l {
     background: url(img/l.png);
   }
 }
 #skrollr {
-  display: none;
-  position: relative;
-  height: 1280px;
+  // display: none;
   @include mq("pc") {
+    position: relative;
+    height: 1280px;
     display: block;
   }
 }
-#before {
+.before {
+  background: url(img/before.png) no-repeat center center / cover;
   z-index: 20;
-  background: url(img/before.png) no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  height: 1280px;
-  width: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
-#after {
-  height: 1280px;
-  width: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-  position: absolute;
-  left: 0;
-  top: 0;
+.after {
+  background: url(img/after.png) no-repeat center center / cover;
   z-index: 10;
-  background: url(img/after.png) no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
 }
-
+.skrollr__img {
+  display: none;
+  background-attachment: scroll;
+  height: 1280px;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  @include mq("pc") {
+    display: flex;
+    background-attachment: fixed;
+    position: absolute;
+  }
+}
+#twentytwenty {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  @include mq("pc") {
+    display: none;
+  }
+  .twenty20 {
+    margin-bottom: 0px;
+  }
+}
 dl {
   margin-bottom: 25px;
   font-size: 12px;
@@ -687,8 +732,21 @@ dl {
 *******************************/
 .spots {
   background: $yellow;
+  background-image: url(img/check.png);
   .inner {
-    padding-top: 25px;
+    // padding-top: 25px;
+    &:before {
+      border-top: 10px solid transparent;
+      border-left: 50vw solid transparent;
+      border-right: 50vw solid $red;
+      border-bottom: 10px solid $red;
+      content: "";
+      transform: scaleY(-1);
+      @include mq("pc") {
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid $red;
+      }
+    }
     &:after {
       border-top: 10px solid transparent;
       border-left: 50vw solid transparent;
@@ -854,28 +912,28 @@ span.required {
   }
 }
 // Contact Form 7
-.wpcf7 form .wpcf7-response-output {
-  margin: 0.5rem 0;
-  padding: 1rem;
-  border: none;
-}
-.wpcf7 form.invalid .wpcf7-response-output,
-.wpcf7 form.unaccepted .wpcf7-response-output {
-  background-color: $white;
-  color: #f00;
-  border: 1px solid #f00;
-  border-radius: 5px;
-}
-.wpcf7 form.sent .wpcf7-response-output {
-  background-color: $white;
-  color: $secondary;
-  border: 1px solid $secondary;
-  border-radius: 5px;
-}
-.wpcf7 .wpcf7-not-valid {
-  background-color: rgba(255, 0, 115, 0.1) !important;
-  border: 2px solid #f00 !important;
-}
+// .wpcf7 form .wpcf7-response-output {
+//   margin: 0.5rem 0;
+//   padding: 1rem;
+//   border: none;
+// }
+// .wpcf7 form.invalid .wpcf7-response-output,
+// .wpcf7 form.unaccepted .wpcf7-response-output {
+//   background-color: $white;
+//   color: #f00;
+//   border: 1px solid #f00;
+//   border-radius: 5px;
+// }
+// .wpcf7 form.sent .wpcf7-response-output {
+//   background-color: $white;
+//   color: $secondary;
+//   border: 1px solid $secondary;
+//   border-radius: 5px;
+// }
+// .wpcf7 .wpcf7-not-valid {
+//   background-color: rgba(255, 0, 115, 0.1) !important;
+//   border: 2px solid #f00 !important;
+// }
 #result {
   margin: 0.5rem 0;
   padding: 1rem;
@@ -982,16 +1040,23 @@ span.required {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: $red;
+  background: $white;
   z-index: 999;
-  &__text {
+  img {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
     color: $white;
     transform: translate(-50%, -50%);
   }
+  // &__text {
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   width: 100%;
+  //   color: $white;
+  //   transform: translate(-50%, -50%);
+  // }
 }
 .ajax-loader {
   display: none !important;
@@ -1094,19 +1159,6 @@ span.required {
 //   }
 // }
 
-/*twentytwenty*/
-// #twentytwenty {
-//   width: 90% !important;
-//   margin: 0 auto;
-//   @include mq("pc") {
-//     width: 50% !important;
-//   }
-//   #twentytwenty-before,
-//   #twentytwenty-after {
-//     border-radius: 10px;
-//   }
-// }
-
 /*******************************
     DARKMODE
 *******************************/
@@ -1124,6 +1176,10 @@ span.required {
   }
   .news__item-text {
     color: $black;
+  }
+  .weather,
+  #tests {
+    background: $dark;
   }
   .topic {
     background: $dark;
@@ -1186,7 +1242,7 @@ span.required {
     background: $dark;
   }
   #loading {
-    background: $dark;
+    background: $white;
   }
   input[type="text"],
   input[type="email"],
@@ -1199,5 +1255,59 @@ span.required {
     &::before {
       background-color: rgba(1, 25, 69, 0.5);
     }
+  }
+}
+/*天気予報*/
+.weather {
+  position: relative;
+  .inner {
+    padding-top: 25px;
+  }
+  .weather__wrap {
+    width: 100%;
+    @include mq("pc") {
+      display: flex;
+      justify-content: center;
+    }
+    select,
+    option {
+      width: 100%;
+      text-align: center;
+      @include mq("pc") {
+        width: 640px;
+      }
+    }
+  }
+}
+
+div#tests {
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  table {
+    width: 100%;
+    @include mq("pc") {
+      width: 640px;
+    }
+  }
+  table,
+  td,
+  th {
+    border: 1px solid $black;
+    border-collapse: collapse;
+  }
+  td,
+  th {
+    padding: 3px;
+    width: 50%;
+    height: 25px;
+    background: $white;
+    vertical-align: middle;
+    text-align: center;
+  }
+  th {
+    background: $accent;
   }
 }
