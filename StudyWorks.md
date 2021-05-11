@@ -26,7 +26,7 @@ pass: kuma1234
 ５．[CorporateSite](http://153.126.204.74/sample/lesson3/index.html)  
 ６．[CorporateSite](http://153.126.204.74/sample/lesson4/index.html)  
 ７．[eSportsSite](http://153.126.204.74/sample/lesson7/index.html)  
-８．[ProgrammingSchoolSite](http://153.126.204.74/sample/lesson8/index.html)  
+８．[SchoolSite](http://153.126.204.74/sample/lesson8/index.html)  
 
 ### DESIGN(Photoshop/Illustrator)  
 1.　[バナー](http://153.126.204.74/study/design01.html)  
