@@ -14,11 +14,11 @@ pass: kuma1234
 id: admin  
 pass: kuma1234  
 
-## [ECサイト](http://153.126.204.74//login.php )  
+## [ECサイト](https://kazuki-portfolio.work/login.php)  
 使用言語：HTML/CSS、JS、PHP、SQL  
 
 [URL]  
-成果物(WEBサイト)：http://153.126.204.74//login.php  
+成果物(WEBサイト)：https://kazuki-portfolio.work/login.php
 ソースコード(GitHub)：https://github.com/KAZU-KUMA/CODE_PRODUCTS  
 
 [ログイン情報]  
