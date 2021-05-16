@@ -14,10 +14,10 @@
       </div><!--.mv-->
       
       <div class="wrapper" id="wrapper">         
-         <div class="onoffswitch">
-              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="onoffswitch" tabindex="0">
-              <label class="onoffswitch-label" for="onoffswitch"></label>
-          </div>
+        <div class="onoffswitch">
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="onoffswitch" tabindex="0">
+          <label class="onoffswitch-label" for="onoffswitch"></label>
+        </div>
     　</div>
 
 
@@ -34,13 +34,13 @@
       <div class="inner">
           <h3 class="news__title ttl">NEWS</h3>
 
-          <div class="news__wrap">
+          <div class="news__wrap" data-aos="zoom-in-up">
             <?php
             $args  = array(
                 'post_type' => 'news',
                 'posts_per_page' => 3,
-                'orderby' => 'news_day',
-                'order' => 'DESC',
+                'order' => 'news_day',
+                'orderby' => 'DESC',
             );
             $the_query = new WP_Query( $args );
             if ( $the_query->have_posts() ) :
@@ -60,7 +60,7 @@
       <section class="weather" id="weather">
       <div class="inner">
       <h3 class="weather__title ttl">WEATHER <br><span>&#9660;地域を選択して天気と気温を確認&#9660;</span></h3>
-        <div class="weather__wrap">
+        <div class="weather__wrap" data-aos="zoom-in-up">
             <form action="" method="POST" id="select">
               <select name="select">
                 <option value="" selected>都道府県</option>
@@ -74,19 +74,19 @@
                 <option value="Okinawa">沖縄県</option>
               </select>
             </form>
-        </div><!--.weather_wrap-->
-        <div id="output">
-        <table class="init">
-          <tr>
-          <th>天気</th>
-          <th>気温</th>
-          </tr>
-          <tr>
-          <td>---</td>
-          <td>---</td>
-          </tr>
-        </table>
-        </div><!-- output -->
+            <div id="output">
+              <table class="init">
+                <tr>
+                  <th>天気</th>
+                  <th>気温</th>
+                </tr>
+                <tr>
+                  <td>---</td>
+                  <td>---</td>
+                </tr>
+              </table>
+            </div><!-- output -->
+          </div><!--.weather_wrap-->
       </div><!--.inner-->
       </section><!--.weather-->
 
@@ -96,7 +96,7 @@
       <div class="inner">
         <h3 class="topic__title ttl">TOPIC</h3>
 
-        <div class="topic__wrap">
+        <div class="topic__wrap" data-aos="zoom-in-up">
           <div class="topic__item">
           <?php
             $args  = array(
@@ -112,7 +112,7 @@
                     <td  style="padding:0;">
                       <div class="topic__item-img">
                         <?php $image = get_field('topic_image'); ?>
-                        <img src="<?=$image['url']; ?>" alt="<?= $image['alt']; ?>" />
+                        <img class="lazyload" src="<?=$image['url']; ?>" alt="<?= $image['alt']; ?>" />
                       </div>
                     </td>
                   </tr>
@@ -137,7 +137,7 @@
                     <td  style="padding:0;">
                       <div class="topic__item-map">
                         <?php $image = get_field('topic_map'); ?>
-                        <img src="<?=$image['url']; ?>" alt="<?= $image['alt']; ?>" />
+                        <img class="lazyload" src="<?=$image['url']; ?>" alt="<?= $image['alt']; ?>" />
                       </div>
                     </td>
                   </tr>
@@ -155,13 +155,13 @@
       <div id="about__bg-s">
         <div id="about__bg-m">
           <div id="about__bg-l">
+            <div class="about__message"><span id="wording">風景と共に桜を楽しむ</span></div>
             <section class="about" id="about">
-               <div class="about__message"><span id="wording">風景と共に桜を楽しむ</span></div>
               <div class="inner">
                 <h3 class="about__title ttl">ABOUT</h3>
 
                 <div class="about__wrap">
-                <div class="about__item">
+                <div class="about__item" data-aos="zoom-in-up">
                   <div class="about__item-texts"  style="padding-top:0;">
                       <div class="about__item-texts-title">桜とは</div>
                       <p class="about__item-texts-desc"><span class="marker">桜(cherry blossom)は植物学上ではバラ科サクラ亜科サクラ属の落葉高木または低木の樹木です。</span>
@@ -176,7 +176,7 @@
                   $args  = array(
                       'post_type' => 'about',
                       'posts_per_page' => 4,
-                      'order' => 'ASC',
+                      'orderby' => 'ASC',
                   );
                   $the_query = new WP_Query( $args );
                   if ( $the_query->have_posts() ) :
@@ -184,7 +184,7 @@
                           <div class="about__item">
                               <div class="about__item-img">
                                   <?php $image = get_field('about_image'); ?>
-                                  <img src="<?=$image['url']; ?>" alt="<?= $image['alt']; ?>" />
+                                  <img  class="lazyload" src="<?=$image['url']; ?>" alt="<?= $image['alt']; ?>" />
                               </div><!--.about__item-img-->
                               <div class="about__item-texts">
                                   <div class="about__item-texts-title"><?=esc_html(get_field('about_title'));?></div>
@@ -197,8 +197,8 @@
               </div><!--.inner-->
 
               <div id="skrollr">
-                <div class="skrollr__img before" data-4450="opacity:1;" data-4730="opacity:0;"></div>
-                <div class="skrollr__img after" data-4730="tranform:traslateY(0%);" data-6100="tranform:traslateY(100%);"></div>
+                <div class="skrollr__img before" data-4550="opacity:1;" data-4800="opacity:0;"></div>
+                <div class="skrollr__img after" data-4550="tranform:traslateY(0%);" data-4800="tranform:traslateY(100%);"></div>
               </div><!-- skrollr -->
               <div id="twentytwenty">
                 <?php echo do_shortcode( '[twenty20 img1="188" img2="189" offset="0.5"]' ); ?>
@@ -208,8 +208,8 @@
               <div class="about__wrap">
                 <div class="about__item">
                   <div class="about__item-texts" style="padding-top:0;">
-                    <div class="about__item-texts-title">日本三大桜</div>
-                      <dl class="about__item-texts-desc">
+                    <div class="about__item-texts-title" data-aos="fade-right">日本三大桜</div>
+                      <dl class="about__item-texts-desc" data-aos="fade-right">
                         <dt>&#9312;三春滝桜</dt>
                         <dd>三春滝桜があるのは、福島県田村郡三春町大字滝字桜久保。エドヒガン系の紅枝垂桜（ベニシダレザクラ）で、日本三大桜であるとともに、樹高12m、根回り11m、幹周り9.5m、枝張り東西22m・南北18mと、三大巨桜としても知られています。</dd>
                         <dt>&#9313;山高神代桜</dt>
@@ -218,8 +218,8 @@
                         <dd>岐阜県本巣市の淡墨公園にあるエドヒガンザクラで、高16.3m、幹囲目通り9.91m、枝張りは東西26.90m、南北20.20m。つぼみのときは薄いピンク色で、満開になると白色、散り際には淡い墨色を帯びるのが特徴で、名前の由来にもなっています。</dd>
                       </dl>
 
-                      <div class="about__item-texts-title">日本三大夜桜</div>
-                      <dl class="about__item-texts-desc">
+                      <div class="about__item-texts-title" data-aos="fade-left">日本三大夜桜</div>
+                      <dl class="about__item-texts-desc" data-aos="fade-left">
                         <dt>&#9312;弘前公園</dt>
                         <dd>弘前公園では桜の開花時期になると毎年弘前さくらまつりが開催されます。見どころは、桜のトンネルと夜桜。特にライトアップされた夜桜は幻想的で、弘前城と夜桜のコントラストも見事である。</dd>
                         <dt>&#9313;上野恩賜公園</dt>
@@ -248,15 +248,15 @@
             $args  = array(
                 'post_type' => 'spots',
                 'posts_per_page' => 5,
-                'order' => 'ASC',
+                'orderby' => 'ASC',
             );
             $the_query = new WP_Query( $args );
             if ( $the_query->have_posts() ) :
                 while ( $the_query->have_posts() ) : $the_query->the_post();?>
                     <div class="spots__item">
-                        <div class="spots__item-img">
+                        <div class="spots__item-img" data-aos="flip-left">
                             <?php $image = get_field('spots_image'); ?>
-                            <img src="<?=$image['url']; ?>" alt="<?= $image['alt']; ?>" />
+                            <img class="lazyload" src="<?=$image['url']; ?>" alt="<?= $image['alt']; ?>" />
                         </div><!--.spots__item-img-->
                         <div class="spots__item-texts">
                             <div class="spots__item-texts-title"><?=esc_html(get_field('spots_title'));?></div>
@@ -275,19 +275,38 @@
         <div class="inner">
           <h3 class="gallery__title ttl">GALLERY</h3>
 
+          <!-- ========================================== -->
+          <div id="slick">
+            <?php
+            $args  = array(
+              'post_type' => 'gallery',
+              'orderby' => 'ASC',
+            );
+            $the_query = new WP_Query( $args );
+            if ( $the_query->have_posts() ) :
+              while ( $the_query->have_posts() ) : $the_query->the_post();?>
+                <div class="gallery__item span2">
+                  <?php $image = get_field('gallery_image'); ?>
+                  <img class="lazyload" src="<?=$image['url']; ?>" />
+                </div><!-- .gallery__item -->
+                <?php endwhile;
+            endif; ?>
+          </div><!--.gallery_wrap-->
+          <!-- ========================================== -->   
+          
           <div class="gallery__wrap">
             <?php
             $args  = array(
-                'post_type' => 'gallery',
+              'post_type' => 'gallery',
                 'posts_per_page' => 36,
-                'order' => 'ASC',
+                'orderby' => 'rand',
             );
             $the_query = new WP_Query( $args );
             if ( $the_query->have_posts() ) :
                 while ( $the_query->have_posts() ) : $the_query->the_post();?>
                 <div class="gallery__item">
                     <?php $image = get_field('gallery_image'); ?>
-                    <a href="<?=$image['url']; ?>" rel="lightbox"><img src="<?=$image['url']; ?>" /></a>
+                    <a href="<?=$image['url']; ?>" rel="lightbox"><img class="lazyload" src="<?=$image['url']; ?>" /></a>
                 </div><!-- .gallery__item -->
                 <?php endwhile;
             endif; ?>

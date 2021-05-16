@@ -1,5 +1,13 @@
 // JavaScript Document
-"use strict";
+'use strict';
+
+jQuery(function(){
+  jQuery(".lazyload").lazyloadload({
+  effect: "fadeIn",
+  effectspeed: 200,
+  threshold: 500
+  });
+});
 
 /*progressbar(ローディング)*/
 jQuery(window).on("load", function () {
@@ -132,7 +140,7 @@ jQuery(function () {
     opacity: 0,
     interval: 100,
   });
-  if (jQuery(window).width() < 1366) {
+  if (navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)) {
     ScrollReveal().reveal(".about__item-img", {
       duration: 1500,
       rotate: { x: 0, y: 180, z: 0 },
@@ -154,7 +162,7 @@ jQuery(function () {
 
 /*もっと見る*/
 jQuery(function () {
-  var show = 18; //最初に表示する件数
+  var show = 15; //最初に表示する件数
   var num = 6; //clickごとに表示したい件数
   var contents = ".gallery__item"; // 対象のコンテンツ
   // 初期設定(クラス付与)
@@ -431,7 +439,7 @@ jQuery(function () {
   if (20 <= time || time <= 7) {
     darkModeOn();
   } else {
-    darkModeOn();
+    darkModeOff();
   }
 });
 
@@ -517,3 +525,37 @@ jQuery(function () {
 jQuery(function () {
   jQuery('#arctext').arctext({radius: 200});
 });
+
+/*アニメーション*/
+AOS.init({
+  // offset: 300,
+  // delay: 100,
+  duration: 1000,
+  easing: 'ease-in-out',
+  once: true,
+});
+
+/*slick(スライド)*/
+jQuery(function () {
+  jQuery("#slick").slick({
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+  });
+
+});
+//   .on({
+//     beforeChange: function(event, slick, currentSlide, nextSlide) {
+//       $(".slick-slide", this).eq(currentSlide).addClass("preve-slide");
+//       $(".slick-slide", this).eq(nextSlide).addClass("slide-animation");
+//     },
+//     afterChange: function() {
+//       $(".preve-slide", this).removeClass("preve-slide　slide-animation");
+//     }
+//   });
+// $slide.find(".slick-slide").eq(0).addClass("slide-animation");
