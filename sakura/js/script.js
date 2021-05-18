@@ -534,28 +534,22 @@ AOS.init({
   easing: 'ease-in-out',
   once: true,
 });
-
-/*slick(スライド)*/
+/*Vegas Background SlideShow（スライド）*/
+var image = [
+  { src: 'https://kazuki-portfolio.work/portfolio/wp-content/themes/sakura/img/before.png'},
+  { src: 'https://kazuki-portfolio.work/portfolio/wp-content/themes/sakura/img/after.png'},
+];
 jQuery(function () {
-  jQuery("#slick").slick({
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    pauseOnFocus: false,
-    pauseOnHover: false,
-  });
-
+  if (navigator.userAgent.match(/iPhone|iPad|Android.+Mobile/)) {
+    $('#twentytwenty').vegas({
+      overlay: true,
+      transition: 'blur',
+      transitionDuration: 2000,
+      delay: 10000,
+      animationDuration: 20000,
+      animation: 'kenburns',
+      slides: image,
+      timer:false,
+    });
+  }
 });
-//   .on({
-//     beforeChange: function(event, slick, currentSlide, nextSlide) {
-//       $(".slick-slide", this).eq(currentSlide).addClass("preve-slide");
-//       $(".slick-slide", this).eq(nextSlide).addClass("slide-animation");
-//     },
-//     afterChange: function() {
-//       $(".preve-slide", this).removeClass("preve-slide　slide-animation");
-//     }
-//   });
-// $slide.find(".slick-slide").eq(0).addClass("slide-animation");

@@ -831,6 +831,7 @@ button:hover,
 #twentytwenty {
   display: block;
   width: 100%;
+  height: 100vh;
   margin: 0 auto;
 }
 
@@ -1062,7 +1063,9 @@ dl dd {
 .contact textarea {
   width: 100%;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #fff;
   border-radius: 5px;
   padding: 10px;
@@ -1519,9 +1522,4 @@ div#output th {
 
 .particles-js-canvas-el {
   margin-top: -80px;
-}
-
-/*---------------------------------------------------*/
-#slick {
-  display: none;
 }

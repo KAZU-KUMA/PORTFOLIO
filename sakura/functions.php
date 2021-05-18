@@ -8,6 +8,8 @@ function my_styles() {
     // slick
     wp_enqueue_style( 'slide-style', get_template_directory_uri() . '/css/slick.min.css', array('reset'), '1.0', false);
     wp_enqueue_style( 'slide2-style', get_template_directory_uri() . '/css/slick-theme.min.css', array('reset'), '1.0', false);
+    // zoomslider
+    wp_enqueue_style( 'zoomslider-style', '//cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.css', array('reset'), '1.0', false);
     // aos
     wp_enqueue_style('aos-style', '//unpkg.com/aos@next/dist/aos.css', array('reset'), '1.0', false);
 }
@@ -39,6 +41,8 @@ function my_scripts() {
     wp_enqueue_script( 'parallax-script', get_template_directory_uri() . '/js/simpleParallax.min.js', array(), '1.0', true );
     // skrollr
     wp_enqueue_script( 'skrollr-script', get_template_directory_uri() . '/js/skrollr.min.js', array(), '1.0', true );
+    // zoomslider
+    wp_enqueue_script( 'zoomslider-script', '//cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js', array(), '1.0', true );
     // aos
     wp_enqueue_script('aos-script', '//unpkg.com/aos@next/dist/aos.js', array(), '1.0', true );
     // JSファイル

@@ -201,8 +201,8 @@
                 <div class="skrollr__img after" data-4550="tranform:traslateY(0%);" data-4800="tranform:traslateY(100%);"></div>
               </div><!-- skrollr -->
               <div id="twentytwenty">
-                <?php echo do_shortcode( '[twenty20 img1="188" img2="189" offset="0.5"]' ); ?>
-                </div><!-- TwentyTwenty-->
+                <?php //echo do_shortcode( '[twenty20 img1="188" img2="189" offset="0.5"]' ); ?>
+              </div><!-- TwentyTwenty-->
 
               <div class="inner border">
               <div class="about__wrap">
@@ -273,27 +273,7 @@
 
       <section class="gallery" id="gallery">
         <div class="inner">
-          <h3 class="gallery__title ttl">GALLERY</h3>
-
-          <!-- ========================================== -->
-          <div id="slick">
-            <?php
-            $args  = array(
-              'post_type' => 'gallery',
-              'orderby' => 'ASC',
-            );
-            $the_query = new WP_Query( $args );
-            if ( $the_query->have_posts() ) :
-              while ( $the_query->have_posts() ) : $the_query->the_post();?>
-                <div class="gallery__item span2">
-                  <?php $image = get_field('gallery_image'); ?>
-                  <img class="lazyload" src="<?=$image['url']; ?>" />
-                </div><!-- .gallery__item -->
-                <?php endwhile;
-            endif; ?>
-          </div><!--.gallery_wrap-->
-          <!-- ========================================== -->   
-          
+          <h3 class="gallery__title ttl">GALLERY</h3>      
           <div class="gallery__wrap">
             <?php
             $args  = array(
