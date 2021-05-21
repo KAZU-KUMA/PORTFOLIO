@@ -30,11 +30,12 @@ pass: kuma1234
 ９．[MedicalSite](http://153.126.204.74/sample/lesson9/index.html)  
 １０．[CorporateSite](http://153.126.204.74/sample/lesson10/index.html)  
 １１．[RyokanSite](http://153.126.204.74/sample/lesson11/index.html)  
+１２．[CafeShopSite](http://153.126.204.74/sample/lesson12/index.html)  
 
 ### DESIGN(Photoshop/Illustrator)  
 1.　[バナー](http://153.126.204.74/study/design01.html)  
 2.　[ランディングページ](http://153.126.204.74/study/design02.html)  
-3.　[アイコン](http://153.126.204.74/study/design03.html)    
+<!-- 3.　[アイコン](http://153.126.204.74/study/design03.html)     -->
 
 [ログイン情報(Basic 認証)]  
 id: admin  
