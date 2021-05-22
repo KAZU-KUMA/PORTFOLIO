@@ -7,9 +7,9 @@
 成果物(WEB サイト)：https://kazuki-portfolio.work/portfolio/  
 ソースコード(GitHub)：https://github.com/KAZU-KUMA/PORTFOLIO/tree/master/sakura
 
-[ログイン情報(Basic 認証)]  
+<!-- [ログイン情報(Basic 認証)]  
 id: admin  
-pass: kuma1234
+pass: kuma1234 -->
 
 [言語、開発環境]  
 - 言語・・・HTML/CSS、JS、PHP
@@ -38,6 +38,6 @@ pass: kuma1234
 2.　[ランディングページ](http://153.126.204.74/study/design02.html)  
 <!-- 3.　[アイコン](http://153.126.204.74/study/design03.html)     -->
 
-[ログイン情報(Basic 認証)]  
+<!-- [ログイン情報(Basic 認証)]  
 id: admin  
-pass: kuma1234
+pass: kuma1234 -->
