@@ -31,6 +31,7 @@ pass: kuma1234
 １０．[CorporateSite](http://153.126.204.74/sample/lesson10/index.html)  
 １１．[RyokanSite](http://153.126.204.74/sample/lesson11/index.html)  
 １２．[CafeShopSite](http://153.126.204.74/sample/lesson12/index.html)  
+１３．[CorporateSite](http://153.126.204.74/sample/lesson13/index.html) 
 
 ### DESIGN(Photoshop/Illustrator)  
 1.　[バナー](http://153.126.204.74/study/design01.html)  
