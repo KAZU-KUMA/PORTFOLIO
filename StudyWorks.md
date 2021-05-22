@@ -19,19 +19,19 @@ pass: kuma1234
 ## その他制作物
 
 ### CODING(HTML/CSS/JS)  
-１．[CafeShopSite](http://153.126.204.74/sample/lesson1/index.html)  
+<!-- １．[CafeShopSite](http://153.126.204.74/sample/lesson1/index.html)  
 ２．[CandyShopSite](http://153.126.204.74/sample/lesson2/index.html)  
 ３．[FlowerShopSite](http://153.126.204.74/sample/lesson6/index.html)  
 ４．[OutdoorSite](http://153.126.204.74/sample/lesson5/index.html)  
 ５．[CorporateSite](http://153.126.204.74/sample/lesson3/index.html)  
 ６．[CorporateSite](http://153.126.204.74/sample/lesson4/index.html)  
 ７．[eSportsSite](http://153.126.204.74/sample/lesson7/index.html)  
-８．[SchoolSite](http://153.126.204.74/sample/lesson8/index.html)  
-９．[MedicalSite](http://153.126.204.74/sample/lesson9/index.html)  
-１０．[CorporateSite](http://153.126.204.74/sample/lesson10/index.html)  
-１１．[RyokanSite](http://153.126.204.74/sample/lesson11/index.html)  
-１２．[CafeShopSite](http://153.126.204.74/sample/lesson12/index.html)  
-１３．[CorporateSite](http://153.126.204.74/sample/lesson13/index.html) 
+８．[SchoolSite](http://153.126.204.74/sample/lesson8/index.html)   -->
+１．[MedicalSite](http://153.126.204.74/sample/lesson9/index.html)  
+２．[CorporateSite](http://153.126.204.74/sample/lesson10/index.html)  
+３．[RyokanSite](http://153.126.204.74/sample/lesson11/index.html)  
+<!-- １２．[CafeShopSite](http://153.126.204.74/sample/lesson12/index.html)  
+１３．[CorporateSite](http://153.126.204.74/sample/lesson13/index.html)  -->
 
 ### DESIGN(Photoshop/Illustrator)  
 1.　[バナー](http://153.126.204.74/study/design01.html)  
