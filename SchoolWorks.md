@@ -3,16 +3,16 @@
 ## [料理紹介サイト](http://153.126.204.74/school/CookingSite/cookcamp.html)   
 使用言語：HTML/CSS  
 
-[ログイン情報(Basic認証)]  
+<!-- [ログイン情報(Basic認証)]  
 id: admin  
-pass: kuma1234  
+pass: kuma1234   -->
 
 ## [掲示板サイト](http://153.126.204.74/school/BulletinBoardSystem/bbs.php)  
 使用言語：HTML/CSS、PHP  
 
-[ログイン情報(Basic認証)]  
+<!-- [ログイン情報(Basic認証)]  
 id: admin  
-pass: kuma1234  
+pass: kuma1234   -->
 
 ## [ECサイト](https://kazuki-portfolio.work/login.php)  
 使用言語：HTML/CSS、JS、PHP、SQL  
