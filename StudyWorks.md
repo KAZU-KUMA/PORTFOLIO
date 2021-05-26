@@ -30,6 +30,7 @@ pass: kuma1234 -->
 １．[MedicalSite](http://153.126.204.74/sample/lesson9/index.html)  
 ２．[CorporateSite](http://153.126.204.74/sample/lesson10/index.html)  
 ３．[RyokanSite](http://153.126.204.74/sample/lesson11/index.html)  
+３．[SchoolSite](http://153.126.204.74/sample/lesson14/index.html)  
 <!-- １２．[CafeShopSite](http://153.126.204.74/sample/lesson12/index.html)  
 １３．[CorporateSite](http://153.126.204.74/sample/lesson13/index.html)  -->
 
