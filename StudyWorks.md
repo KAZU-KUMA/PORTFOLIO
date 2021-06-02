@@ -27,16 +27,17 @@ pass: kuma1234 -->
 ６．[CorporateSite](http://153.126.204.74/sample/lesson4/index.html)  
 ７．[eSportsSite](http://153.126.204.74/sample/lesson7/index.html)  
 ８．[SchoolSite](http://153.126.204.74/sample/lesson8/index.html)   -->
-１．[MedicalSite](http://153.126.204.74/sample/lesson9/index.html)  
-２．[CorporateSite](http://153.126.204.74/sample/lesson10/index.html)  
-３．[RyokanSite](http://153.126.204.74/sample/lesson11/index.html)  
-４．[SchoolSite](http://153.126.204.74/sample/lesson14/index.html)  
+１．[MedicalSite](https://kazuki-portfolio.work/sample/lesson9/index.html)  
+２．[CorporateSite](https://kazuki-portfolio.work/sample/lesson10/index.html)  
+３．[RyokanSite](https://kazuki-portfolio.work/sample/lesson11/index.html)  
+４．[SchoolSite](https://kazuki-portfolio.work/engress/)  
+<!-- ４．[SchoolSite](http://153.126.204.74/sample/lesson14/index.html)   -->
 <!-- １２．[CafeShopSite](http://153.126.204.74/sample/lesson12/index.html)  
 １３．[CorporateSite](http://153.126.204.74/sample/lesson13/index.html)  -->
 
 ### DESIGN(Photoshop/Illustrator)  
-1.　[バナー](http://153.126.204.74/study/design01.html)  
-2.　[ランディングページ](http://153.126.204.74/study/design02.html)  
+1.　[バナー](https://kazuki-portfolio.work/study/design01.html)  
+2.　[ランディングページ](https://kazuki-portfolio.work/study/design02.html)  
 <!-- 3.　[アイコン](http://153.126.204.74/study/design03.html)     -->
 
 <!-- [ログイン情報(Basic 認証)]  
