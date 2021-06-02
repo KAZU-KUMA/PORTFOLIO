@@ -1,6 +1,6 @@
 # 独学制作物
 
-## オリジナル制作物 
+<!-- ## オリジナル制作物 
 このサイトでは風景と共に楽しむ桜を紹介しています。  
 
 [URL]  
@@ -11,12 +11,12 @@
 id: admin  
 pass: kuma1234 -->
 
-[言語、開発環境]  
+<!-- [言語、開発環境]  
 - 言語・・・HTML/CSS、JS、PHP
 - ツール・・・GitHub(バージョン管理)、 WordPress(CMS)
-- OS・・・Windows
+- OS・・・Windows -->
 
-## その他制作物
+<!-- ## その他制作物 -->
 
 ### CODING(HTML/CSS/JS)  
 <!-- １．[CafeShopSite](http://153.126.204.74/sample/lesson1/index.html)  
