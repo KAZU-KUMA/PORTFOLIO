@@ -1,12 +1,12 @@
 # 独学制作物
 
-<!-- ## オリジナル制作物 
+## オリジナル制作物 
 このサイトでは風景と共に楽しむ桜を紹介しています。  
 
 [URL]  
 成果物(WEB サイト)：https://kazuki-portfolio.work/portfolio/  
 ソースコード(GitHub)：https://github.com/KAZU-KUMA/PORTFOLIO/tree/master/sakura
- -->
+
 <!-- [ログイン情報(Basic 認証)]  
 id: admin  
 pass: kuma1234 -->
